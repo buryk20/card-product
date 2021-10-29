@@ -1,0 +1,17 @@
+@import "_normalize";
+@import "_variables_mixin.scss";
+@import "_styleAdaptive.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.card-product-new-name {
+    padding-top: 19px;
+    @include pageGredSolor;
+    font-family: $fontRobotoReg;
+    &__text {
+        font-size: 35px;
+        font-weight: 400;
+    }
+    &__text-bol {
+        font-weight: 600;
+    }
+}

@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,sBAAsB,CAAC;EACnB,gBAAgB,EAAE,OAAgB;CACrC",
-    "sources": [
-        "../../src/scss/main__card.scss"
-    ],
-    "names": [],
-    "file": "main__card.css"
-}
