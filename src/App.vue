@@ -1,18 +1,19 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
-  <starRating />
+  <!-- <star-rating  v-model: rating = "rating"> </star-rating > -->
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
-import starRating from './components/HelloWorld.vue';
+// import starRating from './components/HelloWorld.vue';
+// import StarRating from 'vue-star-rating';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    starRating
+    HelloWorld
+    // StarRating
   }
 }
 </script>
