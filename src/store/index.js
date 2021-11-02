@@ -10,6 +10,3 @@ export default createStore({
   modules: {
   }
 })
-module.exports = {
-  publicPath: '/vue-star-rating/'
-}

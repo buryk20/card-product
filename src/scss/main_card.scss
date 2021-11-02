@@ -1,17 +1,123 @@
 @import "_normalize";
-@import "_variables_mixin.scss";
+@import "_main_variable_gv.scss";
 @import "_styleAdaptive.scss";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 .card-product-new-name {
+    margin-bottom: 18px;
     padding-top: 19px;
-    @include pageGredSolor;
+    display: flex;
+    @include pageGred;
     font-family: $fontRobotoReg;
+    @include startAdaptive {
+        & {
+            @include padMob;
+        }
+    }
     &__text {
         font-size: 35px;
         font-weight: 400;
+        @include bigMobileWidth {
+            & {
+                font-size: 24px;
+            }
+        }
     }
     &__text-bol {
         font-weight: 600;
+        @include bigMobileWidth {
+            & {
+                display: block;
+            }
+        }
+    }
+}
+.card-prod-new-navig {
+    @include pageGred;
+    position: relative;
+    font-family: $fontRobotoReg;
+    &__line {
+        position: absolute;
+        top: 1px;
+        width: 100%;
+        height: 1px;
+        background-color: #C4C4C4;
+        z-index: 1px; 
+    }
+    &__wrp {
+        max-width: 849px;
+        width: 100%;
+        // padding-top: 9px;
+        @include cenMarg;
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        color: $colorCardProd;
+        overflow-x: auto;
+        scrollbar-color: #458245 #714826;
+        @include bigMobileWidth {
+            & {
+                @include padMob;
+                font-size: 14px;
+            }
+        }
+    }
+    &__list {
+        border-top: 3px solid #009b3e00;
+        padding-top: 11px;
+        padding-bottom: 11px;
+        z-index: 10;
+        transition: 0.6s;
+        cursor: pointer;
+        white-space: nowrap;
+        & + & {
+            margin-left: 40px;
+        }
+        &:hover,
+        &:active {
+           color: $colorCard;
+           border-top: 3px solid $colorCard;
+           transition: 0.6s;   
+        }
+    }
+}
+
+.card-prod-wrp-cont {
+    display: flex;
+    @include pageGred;
+    @extend %textMain;
+    @at-root {
+        .card-prod-info {
+            &__sale {
+                max-width: 894px;
+                width: 100%;
+                padding: 16px 20px;
+                @include boxCardProd;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            &__sale-text {
+                padding: 30px 13px;
+                margin-right: 16px;
+                background-color: #E25750;
+                border-radius: 50%;
+                color: #ffffff;
+                font-size: 18px;
+                font-weight: 700;
+            }
+            &__title-text {
+                max-width: 488px;
+            }
+            &__title {
+                margin-bottom: 10px;
+                font-size: 20px;
+                font-weight: 700;
+            }
+            &__text {
+                font-size: 20px;
+                font-weight: 400;
+            }
+        }
     }
 }

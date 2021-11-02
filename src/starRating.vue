@@ -1,23 +1,45 @@
 <template>
-  <div id="starRating">  
-    <Rating :grade="3" :maxStars="5" :hasCounter="true" />
+  <div id="starRating">
+    <rating :rating="rating" :star-style="starStyle"></rating>
   </div>
+  
 </template>
 
 <script>
-import Rating from './components/Rating.vue'
+import Rating from "./components/Rating.vue";
 
 export default {
   name: 'starRating',
   components: {
-    Rating
+    Rating: Rating
   },
-  beforeCreate: function() {
-    document.body.className = 'home';
-  }
-}
+  data() {
+    return {
+      config: {
+        rating: 4.7,
+        isIndicatorActive: true,
+        starStyle: {
+          fullStarColor: "#ed8a19",
+          emptyStarColor: "#737373",
+          starWidth: 100,
+          starHeight: 100
+        }
+      }
+    };
+  },
+    computed: {},
+    methods: {},
+    created() {}
+};
 </script>
 
-<style lang="scss">
-  @import '/scss/global.scss';
+<style>
+#starRating {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
 </style>
