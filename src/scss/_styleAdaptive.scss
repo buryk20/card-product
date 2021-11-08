@@ -23,6 +23,11 @@ $heightBan: 500px;
   }
 }
 
+@mixin mobileHeight {
+  @media (max-width: $mobileHeight) {
+    @content;
+  }
+}
 
 @mixin staticPlockSolor {
   @media (max-width: $staticPlockSolor) {
