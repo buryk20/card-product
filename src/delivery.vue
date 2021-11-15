@@ -8,7 +8,7 @@
                   <div class="card-prod-info-deliv__btn-wrp">
                     <div class="card-prod-info-deliv__line"></div> 
                     <button v-on:click="odActive" class="card-prod-info-deliv__btn-od">Одесса</button>
-                    <button class="card-prod-info-deliv__btn-ua">По Украине</button>
+                    <button v-on:click="uaActive" class="card-prod-info-deliv__btn-ua">По Украине</button>
                   </div>
                 </div>
                 <div class="card-prod-info-deliv__wrp-condi">
@@ -22,7 +22,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="card-prod-info-deliv__wrp-ua-pos">
+                  <div class="card-prod-info-deliv__wrp-ua-pos" v-bind:class="{ active: isActiveUa}">
                     <div >
                       <div class="card-prod-info-deliv__wrp-text-od">
                         <strong>Отделение “Новая Почта”</strong>
@@ -45,12 +45,19 @@ export default ({
     name: 'delivery',
     data() {
         return {
-            isActive: true
+            isActive: true,
+            isActiveUa: false
         }
     }, 
     methods: {
       odActive () {
-      isActive = false
+        this.isActiveUa = false,
+        this.isActive = true
+      console.log("1");
+      },
+      uaActive () {
+        this.isActive = false,
+        this.isActiveUa = true
       }
     }
   })
@@ -60,8 +67,9 @@ export default ({
 @import "scss/_main_variable_gv.scss";
 @import "scss/main_card.scss";
 
-.activ {
+.active {
     opacity: 1;
+    transition: 0.9s;
 }
 
 </style>
