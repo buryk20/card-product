@@ -35,9 +35,8 @@
             >
             GV-074-IP-H-COА14-20 3МР (Lite)
           </h1>
-          <!-- <div id="starRating">
-            
-          </div> -->
+          <div id="starRating">
+          </div>
         </article>
         <article class="card-prod-new-navig">
           <div class="card-prod-new-navig__line"></div>
@@ -73,43 +72,50 @@
                   <p class="card-prod-info__text">С 26 октября по 9 ноября 2021</p>
                 </div>
               </div>  
-
               <div class="vue-buttomSemiTransparent">
                 Привет
               </div>
             </div>
             <div class="card-prod-info__price">
-              <div class="card-prod-info__price-buy">
-                <!-- Состояние цены когда есть акция, перечеркнутая цена, сейчас дисплей none -->
-                <div class="card-prod-info__price-sale">
-                  <p class="card-prod-info__olp-price">3 500 грн</p>
-                  <p class="card-prod-info__volue-sale">2 625 грн</p>
+              <div class="card-prod-info__price-buy-wrp">
+                <div class="card-prod-info__price-buy">
+                  <!-- Состояние цены когда есть акция, перечеркнутая цена, сейчас дисплей none -->
+                  <div class="card-prod-info__price-sale-wrp">
+                    <div class="card-prod-info__price-sale">
+                      <p class="card-prod-info__olp-price">3 500 грн</p>
+                      <p class="card-prod-info__volue-sale">2 625 грн</p>
+                    </div>
+                    <button class="card-prod-info__availability-mob">в наличии</button>
+                  </div>   
+                  <div class="card-prod-info__volue-wrp">
+                    <p class="card-prod-info__volue">2 625 грн</p> 
+                    <button class="card-prod-info__availability-mob">в наличии</button>
+                  </div>
+                  <button class="vue-btnBuy"></button>
                 </div>
-                <p class="card-prod-info__volue">2 625 грн</p> 
-                <button class="card-prod-info__availability-mob">в наличии</button>
-                <button class="card-prod-info__price-btn">Купить</button>
-              </div>
+              </div>  
               <div class="card-prod-info__icon-wrp">
                 <div class="card-prod-info__wrp-img">
                   <button class="card-prod-info__availability">в наличии</button>
-                  <div class="card-prod-info__img-pos">
-                    <img src="icon/delivery-card-prod-icon.svg" alt="бесплатная
-                    доставка">
-                    <p>бесплатная
-                      доставка</p>
-                  </div>
-                  <div class="card-prod-info__img-pos">
-                    <img src="icon/credit-card-prod-icon.svg" alt="оплата
-                    частями">
-                    <p>оплата
-                      частями</p>
-                  </div>
-                  <div class="card-prod-info__img-pos">
-                    <img src="icon/exchange-card-prod-icon.svg" alt="14 дней
-                    обмен/возврат">
-                    <p>14 дней
-                      обмен/возврат</p>
-                  </div>
+                  <div class="card-prod-info__img-pos-wrp">
+                    <div class="card-prod-info__img-pos">
+                      <img src="icon/delivery-card-prod-icon.svg" alt="бесплатная
+                      доставка">
+                      <p>бесплатная
+                        доставка</p>
+                    </div>
+                    <div class="card-prod-info__img-pos">
+                      <img src="icon/credit-card-prod-icon.svg" alt="оплата
+                      частями">
+                      <p>оплата
+                        частями</p>
+                    </div>
+                    <div class="card-prod-info__img-pos">
+                      <img src="icon/exchange-card-prod-icon.svg" alt="14 дней
+                      обмен/возврат">
+                      <p>Поделиться</p>
+                    </div>
+                  </div>  
                 </div>
                 <div class="card-prod-info__tools-wrp">
                   <div class="card-prod-info__tools">
@@ -128,20 +134,71 @@
                   </div>
                 </div>
                 <div class="card-prod-info__guarante-wrp">
-                  <img class="card-prod-info__guarante-img" src="icon/guarantee-card-prod-icon.png" alt="Гарантия">
-                  <p class="card-prod-info__guarante-text"><strong>100%</strong>  гарантия качества от производителя</p>
-                  <p>Код: <strong>6538</strong></p>  
+                  <div class="card-prod-info__guarante-text-img">
+                    <img class="card-prod-info__guarante-img" src="icon/guarantee-card-prod-icon.png" alt="Гарантия">
+                    <p class="card-prod-info__guarante-text"><strong>100%</strong>  гарантия качества от производителя</p>
+                    <p class="card-prod-info__kod">Код: <strong>6538</strong></p>
+                  </div>  
+                  <div class="card-prod-info__tools-wrp-mob">
+                    <div class="card-prod-info__tools">
+                      <img src="icon/like-icon-card-prod.svg" alt="закладки">
+                    </div>
+                    <div class="card-prod-info__tools">
+                      <img src="icon/compare-card-prod-iocn.svg" alt="Сравнить">
+                    </div>
+                    <div class="card-prod-info__tools">
+                      <img src="icon/to-srare-card-prod.svg" alt="14 дней
+                      обмен/возврат">
+                    </div>
+                  </div>  
                 </div>
               </div>
             </div>
+            <div id="delivery">
+              <div class="card-prod-info-deliv">
+                <div class="card-prod-info-deliv__title-wrp">
+                  <h3 class="card-prod-info-deliv__title">Доставка</h3>
+                </div>
+                <div>
+                  <div class="card-prod-info-deliv__btn-wrp">
+                    <div class="card-prod-info-deliv__line"></div> 
+                    <button class="card-prod-info-deliv__btn-od " >Одесса</button>
+                    <button class="card-prod-info-deliv__btn-ua">По Украине</button>
+                  </div>
+                </div>
+                <div class="card-prod-info-deliv__wrp-condi">
+                  <div class="card-prod-info-deliv__wrp-od-pos">
+                    <div class="card-prod-info-deliv__wrp-condi-od">
+                      <div class="card-prod-info-deliv__wrp-text-od">
+                        <strong>Самовывоз</strong> <span class="card-prod-info-deliv__text-gray"> завтра </span><span class="card-prod-info-deliv__text-green">Бесплатно</span>
+                      </div>
+                      <div>
+                        <strong>Курьер</strong><span class="card-prod-info-deliv__text-gray"></span> завтра с 10:00 до 17:00 </span><span class="card-prod-info-deliv__text-green">Бесплатно</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-prod-info-deliv__wrp-ua-pos">
+                    <div >
+                      <div class="card-prod-info-deliv__wrp-text-od">
+                        <strong>Отделение “Новая Почта”</strong>
+                        <span class="card-prod-info-deliv__text-gray"> отправим завтра </span><strong>от 56 грн</strong>
+                      </div>
+                      <div>
+                        <strong>Отделение “УкрПочта”</strong>
+                        <span class="card-prod-info-deliv__text-gray">  отправим завтра </span><span><strong>от 56 грн</strong></span>
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+              </div>
+            </div>  
           </section>
         </article>
       </div>  
     </main>
-
-    <!-- built files will be auto injected -->
-  
   </body>
 </html>
 
 
+
+  

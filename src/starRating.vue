@@ -1,45 +1,89 @@
 <template>
-  <div id="starRating">
-    <rating :rating="rating" :star-style="starStyle"></rating>
+  <div>
+    <div class="rating">
+      <div class="rating__body">
+        <div v-bind:style="{width: `${counter * 2 * 10}%`}" class="rating__active"></div>
+        <div class="rating__items">
+          <input type="radio" name="ration" @click="counter = '1'" class="rating__item" value="1">
+          <input type="radio" name="ration" @click="counter = '2'" class="rating__item" value="2"> 
+          <input type="radio" name="ration" @click="counter = '3'" class="rating__item" value="3"> 
+          <input type="radio" name="ration" @click="counter = '4'" class="rating__item" value="4"> 
+          <input type="radio" name="ration" @click="counter = '5'" class="rating__item" value="5">  
+        </div>
+      </div>
+      <div class="rating__value" >отзывы {{ counter }}</div>
+    </div>
   </div>
   
 </template>
 
 <script>
-import Rating from "./components/Rating.vue";
-
 export default {
   name: 'starRating',
-  components: {
-    Rating: Rating
-  },
   data() {
-    return {
-      config: {
-        rating: 4.7,
-        isIndicatorActive: true,
-        starStyle: {
-          fullStarColor: "#ed8a19",
-          emptyStarColor: "#737373",
-          starWidth: 100,
-          starHeight: 100
-        }
+      return {
+        counter: 0,
+        // a: 0
+        // widthAction: counter
       }
-    };
+    
   },
-    computed: {},
-    methods: {},
-    created() {}
-};
+  methods: {
+    $_ratingVal($event){
+      $event.tager.counter
+    }
+  },
+  props: {
+
+  }
+}
+
 </script>
 
-<style>
-#starRating {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss" scoped>
+.rating {
+  display: flex;
+  align-items: flex-end;
+  font-size: 40px;
+  line-height: 0.75;
+  &__value {
+    font-size: 50%;
+  }
+  &__body {
+    position: relative;
+    &::before {
+      content: url("../public/icon/star-card-product-total-des.svg");
+      display: block;
+    }
+  }
+  &__items {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  &__item {
+    flex: 0 0 15%;
+    height: 100%;
+    opacity: 0;
+  }
+  &__active {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    &::before {
+      content: url("../public/icon/star-card-product-total.svg");
+      position: absolute;
+      width: 80%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
 }
 </style>
