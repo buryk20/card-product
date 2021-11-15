@@ -7,12 +7,12 @@
                 <div>
                   <div class="card-prod-info-deliv__btn-wrp">
                     <div class="card-prod-info-deliv__line"></div> 
-                    <button @click="active = !active" class="card-prod-info-deliv__btn-od " >Одесса</button>
+                    <button v-on:click="odActive" class="card-prod-info-deliv__btn-od">Одесса</button>
                     <button class="card-prod-info-deliv__btn-ua">По Украине</button>
                   </div>
                 </div>
                 <div class="card-prod-info-deliv__wrp-condi">
-                  <div class="card-prod-info-deliv__wrp-od-pos" :class="{ active }">
+                  <div class="card-prod-info-deliv__wrp-od-pos" v-bind:class="{ active: isActive}">
                     <div class="card-prod-info-deliv__wrp-condi-od">
                       <div class="card-prod-info-deliv__wrp-text-od">
                         <strong>Самовывоз</strong> <span class="card-prod-info-deliv__text-gray"> завтра </span><span class="card-prod-info-deliv__text-green">Бесплатно</span>
@@ -45,8 +45,13 @@ export default ({
     name: 'delivery',
     data() {
         return {
-            isActive: false
+            isActive: true
         }
+    }, 
+    methods: {
+      odActive () {
+      isActive = false
+      }
     }
   })
 </script>

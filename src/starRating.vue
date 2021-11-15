@@ -2,13 +2,13 @@
   <div>
     <div class="rating">
       <div class="rating__body">
-        <div v-bind:style="{width: `${counter * 2 * 10}%`}" class="rating__active"></div>
+        <div v-bind:style="{width: `${inpVal * 2 * 10}%`}" class="rating__active"></div>
         <div class="rating__items">
-          <input type="radio" name="ration" @click="counter = '1'" class="rating__item" value="1">
-          <input type="radio" name="ration" @click="counter = '2'" class="rating__item" value="2"> 
-          <input type="radio" name="ration" @click="counter = '3'" class="rating__item" value="3"> 
-          <input type="radio" name="ration" @click="counter = '4'" class="rating__item" value="4"> 
-          <input type="radio" name="ration" @click="counter = '5'" class="rating__item" value="5">  
+          <input type="radio" name="ration" @input="inputValue" class="rating__item" value="1">
+          <input type="radio" name="ration" @input="inputValue" class="rating__item" value="2"> 
+          <input type="radio" name="ration" @input="inputValue" class="rating__item" value="3"> 
+          <input type="radio" name="ration" @input="inputValue" class="rating__item" value="4"> 
+          <input type="radio" name="ration" @input="inputValue" class="rating__item" value="5">  
         </div>
       </div>
       <div class="rating__value" >отзывы {{ counter }}</div>
@@ -23,14 +23,19 @@ export default {
   data() {
       return {
         counter: 0,
+        inpVal: 0
         // a: 0
         // widthAction: counter
       }
-    
   },
   methods: {
-    $_ratingVal($event){
-      $event.tager.counter
+    createPost () {
+
+    },
+    inputValue (event) {
+      var inpVal; 
+      this.inpVal = event.target.value;
+      console.log(inpVal);
     }
   },
   props: {
