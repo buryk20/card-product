@@ -731,6 +731,7 @@ label {
 }
 
 .card-prod-info-deliv {
+  margin-bottom: 16px;
   padding: 16px 20px;
   -webkit-box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.1);
@@ -829,6 +830,48 @@ label {
 
 .card-prod-info-deliv__wrp-od-pos {
   opacity: 0;
+}
+
+.card-prod-info-payment {
+  margin-bottom: 16px;
+  padding: 16px 20px;
+  -webkit-box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.card-prod-info-payment__wrp-icon {
+  max-width: 451px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.card-prod-info-payment__border {
+  height: 40px;
+  padding: 0 15px;
+  margin-right: 16px;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 8px;
+  border: 1px solid #009B3E;
+}
+
+.card-prod-description-mini {
+  padding: 16px 20px;
+  -webkit-box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 @media (max-width: 600px) {

@@ -16,7 +16,6 @@ export default ({
 .card-prod-info {
     &__price-btn {
         @include btnCardBuy;
-        width: 273px;
         &:hover {
             background-color: $colorHov;
         }

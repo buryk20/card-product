@@ -6,16 +6,19 @@ import btnTrans from './components/btn-semi-transparent.vue';
 import buttonBuy from './btnBuy.vue';
 import delivery from './delivery.vue';
 
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
 // import { createApp } from "vue";
 // import starRating from "./starRating.vue";
 // import vue3StarRatings from "vue3-star-ratings";
 
 // const starRating = createApp(starRating);
 
-// starRating.component("vue3-star-ratings", vue3StarRatings);
+// starRating.component("vue3-star-ratings", vue3StarRatings);L
 
 createApp(App).use(store).mount('#app');
-createApp(starRating).use(starRating).mount('#starRating');
+createApp(starRating).use(VueAxios, axios).mount('#starRating');
 createApp(delivery).use(delivery).mount('#delivery');
 
 // createApp(StarRating).use(StarRating).mount('#StarRating')

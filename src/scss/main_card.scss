@@ -416,6 +416,7 @@
         }
         @at-root {
             .card-prod-info-deliv {
+                margin-bottom: 16px;
                 @include boxCardProd;
                 position: relative;
                 &__title {
@@ -477,6 +478,31 @@
                 &__wrp-od-pos {
                     opacity: 0;
                 }
+            }
+            .card-prod-info-payment {
+                margin-bottom: 16px;
+                @include boxCardProd;
+                &__wrp-icon {
+                    max-width: 451px;
+                    display: flex;
+                    flex-wrap: wrap;
+                                        // justify-content: space-between;
+                }
+                &__border {
+                    height: 40px;
+                    padding: 0 15px;
+                    margin-right: 16px;
+                    margin-top: 16px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 8px;
+                    border: 1px solid $colorCard;
+                }
+                
+            }
+            .card-prod-description-mini {
+                @include boxCardProd;
             }
         }
     }
