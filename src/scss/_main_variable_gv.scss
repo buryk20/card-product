@@ -54,6 +54,11 @@ $btnTransparentCol: #009b3e1a;
   background-color: $colorCard;
 }
 
+@mixin underlinedGreenText {
+  color: $colorCard;
+  text-decoration: underline;
+}
+
 @mixin btnCardTransparent {
   min-height: 40px;
   padding-left: 19px;

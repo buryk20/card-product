@@ -108,8 +108,7 @@ export default {
   line-height: 0.75;
   &__value {
     font-size: 50%;
-    color: $colorCard;
-    text-decoration: underline;
+    @include underlinedGreenText;
   }
   &__body {
     margin-right: 16px;

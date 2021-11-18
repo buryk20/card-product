@@ -14,7 +14,15 @@ export default {
   components: {
     HelloWorld
     // StarRating
-  }
+  },
+  data() {
+        return {
+            sliderItems: [
+            { id: 1, name: 'img1', img: '1.png'}
+            ]
+        }
+        
+    }
 }
 </script>
 
