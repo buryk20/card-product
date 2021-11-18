@@ -5,7 +5,7 @@ import starRating from './starRating.vue';
 import btnTrans from './components/btn-semi-transparent.vue';
 import buttonBuy from './btnBuy.vue';
 import delivery from './delivery.vue';
-import sliderPhoto from './sliderPhotoTop.vue'
+import slider from './slider.vue'
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
@@ -21,7 +21,7 @@ import VueAxios from 'vue-axios'
 createApp(App).use(store).mount('#app');
 createApp(starRating).use(VueAxios, axios).mount('#starRating');
 createApp(delivery).use(delivery).mount('#delivery');
-createApp(sliderPhoto).use(sliderPhoto).mount('#sliderPhoto');
+createApp(slider).use(slider).mount('#slider');
 
 // createApp(StarRating).use(StarRating).mount('#StarRating')
 

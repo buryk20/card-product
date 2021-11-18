@@ -7,7 +7,7 @@
 <script>
 
 export default {
-    name: 'vCarouselItem',
+    name: 'v-carouse-item',
     props: {
         item_data: {
             type: Object,

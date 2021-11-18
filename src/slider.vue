@@ -15,7 +15,7 @@ import vCarousel from './components/v-carouse.vue'
 // import StarRating from 'vue-star-rating';
 
 export default {
-  name: 'App',
+  name: 'Slider',
   components: {
     // HelloWorld,
     vCarousel
