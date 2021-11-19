@@ -1,6 +1,7 @@
 @import "_normalize";
 @import "_main_variable_gv.scss";
 @import "_styleAdaptive.scss";
+@import "_slider-card-prod.scss";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 .card-product-new-wrp {
@@ -102,23 +103,6 @@
         }
     }
     @extend %textMain;
-    @at-root {
-        .card-prod-img {
-            width: 590px;
-            &__benefits {
-                @include boxCardProd;
-                font-size: 18px;
-            }
-            &__text {
-                margin-bottom: 21px;
-            }
-            &__icon {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-        }
-    }
     @at-root {
         .card-prod-info {
             max-width: 894px;

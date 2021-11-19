@@ -1,0 +1,26 @@
+.card-prod-img {
+    width: 590px;
+    &__benefits {
+        @include boxCardProd;
+        font-size: 18px;
+    }
+    &__text {
+        margin-bottom: 21px;
+    }
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__wrapper {
+        max-width: 491px;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+    &__v-carousel {
+        display: flex;
+    }
+    &__img {
+        max-width: 491px;
+    }
+}

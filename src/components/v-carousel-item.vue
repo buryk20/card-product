@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img :src="require('../../public/img/' + item_data.img)" alt="">
+        <img class="card-prod-img__img" :src="require('../../public/img/' + item_data.img)" alt="карусель">
     </div>
 </template>
 
@@ -16,3 +16,7 @@ export default {
     }
 };
 </script>
+
+<style lang="scss" scoped>
+    @import url("../scss/_slider-card-prod.scss");
+</style>

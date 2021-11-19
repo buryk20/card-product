@@ -1,13 +1,16 @@
 <template>
-    <div class="wrapper">
-        <div>
-            <v-carousel-item 
+    <div class="card-prod-img__wrapper">
+        <div class="card-prod-img__v-carousel" :style="{'margin-left': '-' + (100 * currentSliderIndex) + '%'}">
+            <v-carousel-item
                 v-for="item in carousel_data"
                 :key="item.id"
                 :item_data="item"
             ></v-carousel-item>
+
         </div>
-    </div>    
+        <button @click="prevSlide">назад</button>
+        <button @click="nexSlide">вперед</button>
+    </div>
 </template>
 
 <script>
@@ -17,7 +20,7 @@ export default ({
     name: 'v-carouse',
     components: {
         vCarouselItem
-    },    
+    },
     props: {
         carousel_data: {
             type: Array,
@@ -26,15 +29,24 @@ export default ({
     },
     data() {
         return {
-            // sliderItems: [
-            // { id: 1, name: 'img1', img: '1.png'}
-            // ]
+            currentSliderIndex: 0
         }
-        
+    },
+    methods: {
+        prevSlide() {
+            if(this.currentSliderIndex > 0) {
+                this.currentSliderIndex--
+                console.log(this.currentSliderIndex);
+            }
+        },
+        nexSlide() {
+            this.currentSliderIndex++
+            console.log(this.currentSliderIndex);
+        }
     }
 })
 </script>
 
 <style lang="scss" scoped>
-@import url("../scss/_slider-card-prod.scss");
+    @import url("../scss/_slider-card-prod.scss");
 </style>
