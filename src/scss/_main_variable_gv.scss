@@ -7,8 +7,8 @@ $border-grey: 1px solid #d1d1d1;
 $line-grey-col: 1px solid #c4c4c4;
 $colorHov: #287231;
 $block-shadow: 0px 10px 35px rgba(0, 0, 0, 0.1);
-$colorCardProd: #393D38;
-$colorCard: #009B3E;
+$colorCardProd: #393d38;
+$colorCard: #009b3e;
 $btnTransparentCol: #009b3e1a;
 
 //вложенности
@@ -112,7 +112,16 @@ $btnTransparentCol: #009b3e1a;
   position: relative;
 }
 
-@mixin  cenMarg {
+@mixin pageGredCard {
+  max-width: 1500px;
+  width: 100%;
+  @include cenMarg;
+  position: relative;
+  color: $colorCardProd;
+  font-family: $fontRobotoReg;
+}
+
+@mixin cenMarg {
   margin-left: auto;
   margin-right: auto;
 }

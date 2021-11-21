@@ -1,26 +1,73 @@
 .card-prod-img {
-    width: 590px;
-    &__benefits {
-        @include boxCardProd;
-        font-size: 18px;
+  &__benefits {
+    margin-right: 16px;
+    @include boxCardProd;
+    @include startAdaptiveSmol {
+      & {
+        @include padMob;
+      }
     }
-    &__text {
-        margin-bottom: 21px;
-    }
-    &__icon {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    &__wrapper {
-        max-width: 491px;
-        overflow: hidden;
-        margin: 0 auto;
-    }
-    &__v-carousel {
-        display: flex;
-    }
-    &__img {
-        max-width: 491px;
-    }
+    font-size: 18px;
+  }
+  &__text {
+    margin-bottom: 21px;
+  }
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__wrapper {
+    max-width: 491px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  &__v-carousel {
+    display: flex;
+    transition: all 0.3s;
+  }
+  &__img {
+    max-width: 491px;
+  }
+  &__v-carouse-lift > img {
+    max-width: 65px;
+  }
+
+  &__v-carouse-lift {
+    margin-bottom: 7px;
+    border-radius: 8px;
+  }
+  &__wrp-pos {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  &__wrp-min-img {
+    padding-top: 17px;
+    padding: 27px 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__border {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    border: 1px solid $colorCard;
+    border-radius: 8px;
+    top: 39px;
+    left: 15px;
+  }
+  &__wrp-cont {
+    max-width: 590px;
+    width: 100%;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    @include boxCardProd;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  &__btn-up {
+    margin-bottom: 7px;
+  }
 }

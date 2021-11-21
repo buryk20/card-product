@@ -1,16 +1,35 @@
 <template>
-    <div class="card-prod-img__wrapper">
-        <div class="card-prod-img__v-carousel" :style="{'margin-left': '-' + (100 * currentSliderIndex) + '%'}">
-            <v-carousel-item
-                v-for="item in carousel_data"
-                :key="item.id"
-                :item_data="item"
-            ></v-carousel-item>
+    <div class="card-prod-img__wrp-pos">
+        <div class="card-prod-img__wrapper">
+            <div class="card-prod-img__v-carousel" :style="{'margin-left': '-' + (100 * currentSliderIndex) + '%'}">
+                <v-carousel-item
+                    v-for="item in carousel_data"
+                    :key="item.id"
+                    :item_data="item"
+                ></v-carousel-item>
 
+            </div>
+            
+            
         </div>
-        <button @click="prevSlide">назад</button>
-        <button @click="nexSlide">вперед</button>
-    </div>
+        <div class="card-prod-img__wrp-min-img">
+            <button @click="prevSlide">
+                <img class="card-prod-img__btn-up" src="../../public/icon/slider-icon-up-card.svg" alt="стрелка вверх">
+            </button>
+            <div 
+                :style="{'top': border_pos + 'px'}"
+                class="card-prod-img__border"
+            ></div>
+            <v-carousel-item 
+                    class="card-prod-img__v-carouse-lift"
+                    v-for="item in carousel_data"
+                    :key="item.id"
+                    :item_data="item"
+                    @click="imgClick"
+            ></v-carousel-item>
+            <button @click="nexSlide"><img src="../../public/icon/slider-icon-down-card.svg" alt="стрелка вверх"></button>
+        </div>
+    </div>    
 </template>
 
 <script>
@@ -29,19 +48,33 @@ export default ({
     },
     data() {
         return {
-            currentSliderIndex: 0
+            currentSliderIndex: 0,
+            border_pos: 39
         }
     },
     methods: {
         prevSlide() {
             if(this.currentSliderIndex > 0) {
                 this.currentSliderIndex--
-                console.log(this.currentSliderIndex);
+                this.border_pos = (this.border_pos - 72);
+            } else if(this.currentSliderIndex == 0) {
+                this.currentSliderIndex = this.carousel_data.length -1;
+                this.border_pos = (this.border_pos + ((this.carousel_data.length - 1) * 72));
             }
         },
         nexSlide() {
-            this.currentSliderIndex++
-            console.log(this.currentSliderIndex);
+            if(this.currentSliderIndex >= this.carousel_data.length -1){
+                this.currentSliderIndex = 0;
+                this.border_pos = 39;
+            } else {
+                this.currentSliderIndex++;
+                this.border_pos = (this.border_pos + 72);
+                console.log(this.border_pos + 72);
+            }
+            
+        },
+        imgClick(){
+            console.log("click");
         }
     }
 })
