@@ -1,5 +1,5 @@
 <template>
-  <vCarousel 
+  <vCarousel
     :carousel_data="sliderItems"
   ></vCarousel>
 
@@ -18,23 +18,18 @@ export default {
             sliderItems: [
               { id: 1, name: 'img1', img: '1.png'},
               { id: 2, name: 'img2', img: '6626_2.png'},
-              { id: 2, name: 'img2', img: '6626_3.png'},
-              { id: 2, name: 'img2', img: '6626_4.png'},
-              { id: 2, name: 'img2', img: '6626_5.png'}
+              { id: 3, name: 'img2', img: '6626_3.png'},
+              { id: 4, name: 'img2', img: '6626_4.png'},
+              { id: 5, name: 'img2', img: '6626_5.png'},
+              { id: 6, name: 'img2', img: '6626_4.png'},
+              { id: 7, name: 'img2', img: '6626_3.png'}
             ]
         }
-        
+
     }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

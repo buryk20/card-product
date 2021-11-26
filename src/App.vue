@@ -1,5 +1,5 @@
 <template>
-  <vCarousel 
+  <vCarousel
     :carousel_data="sliderItems"
   ></vCarousel>
 
@@ -23,7 +23,7 @@ export default {
               { id: 2, name: 'img2', img: '6626_5.png'}
             ]
         }
-        
+
     }
 }
 </script>

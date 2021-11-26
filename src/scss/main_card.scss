@@ -92,6 +92,7 @@
 }
 
 .card-prod-wrp-cont {
+  margin-bottom: 16px;
   display: flex;
   justify-content: space-between;
   color: $colorCardProd;
@@ -531,6 +532,9 @@
       @include padMob;
     }
   }
+  &__wrp-cont {
+    @include boxCardProd;
+  }
   &__wrp {
     display: grid;
     grid-template-columns: 0.9fr 1.7fr;
@@ -555,6 +559,15 @@
     & {
       max-width: 510px;
       width: 100%;
+    }
+  }
+}
+
+.card-prod-descriptiom {
+  @include boxCardProd;
+  @include startAdaptiveSmol {
+    & {
+      @include padMob;
     }
   }
 }

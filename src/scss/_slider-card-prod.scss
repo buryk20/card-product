@@ -1,46 +1,138 @@
+@import "_styleAdaptive.scss";
+@import "_main_variable_gv.scss";
+
 .card-prod-img {
+  max-width: 894px;
+  width: 100%;
+  margin-right: 16px;
+
+  @include bigMobileWidth {
+    & {
+      margin-right: 0;
+    }
+  }
+
   &__benefits {
-    margin-right: 16px;
     @include boxCardProd;
+
     @include startAdaptiveSmol {
       & {
         @include padMob;
       }
     }
+
     font-size: 18px;
+
+    @include bigMobileWidth {
+      & {
+        margin-bottom: 16px;
+      }
+    }
   }
+
+  &__dest {
+    @include bigMobileWidth {
+      & {
+        display: none;
+      }
+    }
+  }
+
+  &__mob {
+    display: none;
+
+    @include bigMobileWidth {
+      & {
+        display: block;
+      }
+    }
+  }
+
   &__text {
     margin-bottom: 21px;
   }
+
   &__icon {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
+
+  &__icon-mar {
+    max-width: 78px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   &__wrapper {
     max-width: 491px;
     overflow: hidden;
     margin: 0 auto;
+
+    @include smallestScreenWidth {
+      & {
+        max-width: 371px;
+      }
+    }
+
+    @include mobileWidth {
+      & {
+        max-width: 264px;
+      }
+    }
   }
+
   &__v-carousel {
     display: flex;
     transition: all 0.3s;
   }
+
   &__img {
     max-width: 491px;
-  }
-  &__v-carouse-lift > img {
-    max-width: 65px;
+
+    @include smallestScreenWidth {
+      & {
+        max-width: 371px;
+      }
+    }
+
+    @include mobileWidth {
+      & {
+        max-width: 264px;
+      }
+    }
   }
 
-  &__v-carouse-lift {
-    margin-bottom: 7px;
-    border-radius: 8px;
+  &__little-img-w {
+    padding-bottom: 8px;
+    transition: .3s;
   }
+
+  &__little-img {
+    max-width: 65px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+
+    cursor: pointer;
+
+    @include mobileWidth {
+      & {
+        max-width: 41px;
+      }
+    }
+
+    &.active {
+      border-color: green;
+    }
+  }
+
   &__wrp-pos {
     display: flex;
     flex-direction: row-reverse;
   }
+
   &__wrp-min-img {
     padding-top: 17px;
     padding: 27px 16px;
@@ -48,7 +140,13 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    @include mobileWidth {
+      & {
+        padding: 27px 0;
+      }
+    }
   }
+
   &__border {
     width: 65px;
     height: 65px;
@@ -58,16 +156,60 @@
     top: 39px;
     left: 15px;
   }
+
   &__wrp-cont {
     max-width: 590px;
     width: 100%;
-    margin-right: 16px;
-    margin-bottom: 16px;
-    @include boxCardProd;
     padding: 0;
     box-sizing: border-box;
+
+    @include smallestScreenWidth {
+      & {
+        max-width: 470px;
+      }
+    }
+
+    @include bigMobileWidth {
+      & {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    @include mobileWidth {
+      & {
+        max-width: 343px;
+      }
+    }
   }
+
   &__btn-up {
     margin-bottom: 7px;
   }
+
+  &__wrp {
+    margin-bottom: 16px;
+    @include boxCardProd;
+  }
+}
+
+.my-w {
+  height: 450px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  @include smallestScreenWidth {
+    & {
+      height: 376px;
+    }
+  }
+
+  @include mobileWidth {
+    & {
+      height: 238px;
+    }
+  }
+
 }

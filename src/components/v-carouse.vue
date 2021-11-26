@@ -1,85 +1,101 @@
 <template>
-    <div class="card-prod-img__wrp-pos">
-        <div class="card-prod-img__wrapper">
-            <div class="card-prod-img__v-carousel" :style="{'margin-left': '-' + (100 * currentSliderIndex) + '%'}">
-                <v-carousel-item
-                    v-for="item in carousel_data"
-                    :key="item.id"
-                    :item_data="item"
-                ></v-carousel-item>
-
-            </div>
-            
-            
+  <div class="card-prod-img__wrp-pos">
+    <div class="card-prod-img__wrapper">
+      <div
+        class="card-prod-img__v-carousel"
+        :style="{ 'margin-left': '-' + 100 * currentSliderIndex + '%' }"
+      >
+        <img
+          v-for="item in carousel_data"
+          :key="item.id"
+          class="card-prod-img__img"
+          :src="'/img/' + item.img"
+          alt="карусель"
+        />
+      </div>
+    </div>
+    <div class="card-prod-img__wrp-min-img">
+      <button @click="prevSlide">
+        <img
+          class="card-prod-img__btn-up"
+          src="/icon/slider-icon-up-card.svg"
+          alt="стрелка вверх"
+        />
+      </button>
+      <div class="my-w">
+        <div
+          class="card-prod-img__little-img-w"
+          v-for="(item, index) in carousel_data"
+          :key="item.id"
+          :style="getMarginForFirst(index)"
+          @click="imgClick(index, $event)"
+        >
+          <img
+            class="card-prod-img__little-img"
+            :class="{ active: currentSliderIndex === index }"
+            :src="'/img/' + item.img"
+            alt="карусель"
+          />
         </div>
-        <div class="card-prod-img__wrp-min-img">
-            <button @click="prevSlide">
-                <img class="card-prod-img__btn-up" src="../../public/icon/slider-icon-up-card.svg" alt="стрелка вверх">
-            </button>
-            <div 
-                :style="{'top': border_pos + 'px'}"
-                class="card-prod-img__border"
-            ></div>
-            <v-carousel-item 
-                    class="card-prod-img__v-carouse-lift"
-                    v-for="item in carousel_data"
-                    :key="item.id"
-                    :item_data="item"
-                    @click="imgClick"
-            ></v-carousel-item>
-            <button @click="nexSlide"><img src="../../public/icon/slider-icon-down-card.svg" alt="стрелка вверх"></button>
-        </div>
-    </div>    
+      </div>
+      <button @click="nexSlide">
+        <img src="/icon/slider-icon-down-card.svg" alt="стрелка вверх" />
+      </button>
+    </div>
+  </div>
 </template>
 
 <script>
-import vCarouselItem from './v-carousel-item.vue'
+export default {
+  name: "v-carouse",
+  props: {
+    carousel_data: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  data() {
+    return {
+      currentSliderIndex: 0,
+      littleImgWrapHeight: 0,
+    };
+  },
+  computed: {
+    littleImgMargin() {
+      return -this.littleImgWrapHeight * this.currentSliderIndex;
+    },
+  },
+  methods: {
+    getMarginForFirst(index) {
+      let v = index === 0 ? this.littleImgMargin + "px" : 0;
+      return {
+        "margin-top": v,
+      };
+    },
+    prevSlide() {
+      this.currentSliderIndex--;
 
-export default ({
-    name: 'v-carouse',
-    components: {
-        vCarouselItem
+      if (this.currentSliderIndex < 0) {
+        this.currentSliderIndex = this.carousel_data.length - 1;
+      }
     },
-    props: {
-        carousel_data: {
-            type: Array,
-            default: () => []
-        }
+    nexSlide() {
+      this.currentSliderIndex++;
+
+      if (this.currentSliderIndex >= this.carousel_data.length) {
+        this.currentSliderIndex = 0;
+      }
     },
-    data() {
-        return {
-            currentSliderIndex: 0,
-            border_pos: 39
-        }
+    imgClick(currIndex, event) {
+      this.currentSliderIndex = currIndex;
+      this.littleImgWrapHeight =
+        event.currentTarget.getBoundingClientRect().height;
     },
-    methods: {
-        prevSlide() {
-            if(this.currentSliderIndex > 0) {
-                this.currentSliderIndex--
-                this.border_pos = (this.border_pos - 72);
-            } else if(this.currentSliderIndex == 0) {
-                this.currentSliderIndex = this.carousel_data.length -1;
-                this.border_pos = (this.border_pos + ((this.carousel_data.length - 1) * 72));
-            }
-        },
-        nexSlide() {
-            if(this.currentSliderIndex >= this.carousel_data.length -1){
-                this.currentSliderIndex = 0;
-                this.border_pos = 39;
-            } else {
-                this.currentSliderIndex++;
-                this.border_pos = (this.border_pos + 72);
-                console.log(this.border_pos + 72);
-            }
-            
-        },
-        imgClick(){
-            console.log("click");
-        }
-    }
-})
+  },
+};
 </script>
 
-<style lang="scss" scoped>
-    @import url("../scss/_slider-card-prod.scss");
+<style lang="scss" src="../scss/_slider-card-prod.scss" scoped>
+
+
 </style>
