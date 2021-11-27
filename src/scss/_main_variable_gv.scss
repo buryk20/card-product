@@ -10,6 +10,8 @@ $block-shadow: 0px 10px 35px rgba(0, 0, 0, 0.1);
 $colorCardProd: #393d38;
 $colorCard: #009b3e;
 $btnTransparentCol: #009b3e1a;
+$colorCardGrey: #8a8a8a;
+$colorBackSlider: #009b3e1a;
 
 //вложенности
 %icon-position-cent {
@@ -42,6 +44,14 @@ $btnTransparentCol: #009b3e1a;
 }
 
 //mixin
+
+@mixin gridDowloads {
+  display: grid;
+  grid-template-columns: 2.1fr 0.8fr 0.8fr 0.8fr 1.3fr;
+  grid-template-rows: 0.2fr;
+  text-align: center;
+}
+
 @mixin btnCardBuy {
   min-height: 40px;
   max-width: 273px;
@@ -150,4 +160,10 @@ $btnTransparentCol: #009b3e1a;
   color: $colorCard;
   border-top: 3px solid $colorCard;
   transition: 0.6s;
+}
+
+@mixin widthCardCont {
+  max-width: 1197px;
+  width: 100%;
+  margin-right: auto;
 }

@@ -527,6 +527,7 @@
 }
 
 .card-prod-specific {
+  margin-bottom: 16px;
   @include startAdaptive {
     & {
       @include padMob;
@@ -548,6 +549,7 @@
   &__article {
     font-weight: 400;
     text-transform: uppercase;
+    color: $colorCardGrey;
   }
   &__value-wrp {
     margin-bottom: 10px;
@@ -564,10 +566,124 @@
 }
 
 .card-prod-descriptiom {
-  @include boxCardProd;
+  margin-bottom: 16px;
+  font-size: 16px;
   @include startAdaptiveSmol {
     & {
       @include padMob;
     }
+  }
+  &__wrp {
+    @include boxCardProd;
+  }
+}
+
+.card-prod-downloads {
+  margin-bottom: 16px;
+  font-size: 16px;
+  @include startAdaptiveSmol {
+    & {
+      @include padMob;
+    }
+  }
+  &__wrp {
+    @include boxCardProd;
+    padding: 0;
+  }
+  &__title {
+    padding-top: 16px;
+    padding-left: 16px;
+  }
+  &__heading {
+    padding-top: 16px;
+    padding-left: 16px;
+    margin-bottom: 16px;
+    @include gridDowloads;
+    color: $colorCardGrey;
+    @include mobileWidth {
+      & {
+        grid-template-columns: 1.5fr 1.1fr 1.1fr;
+        grid-template-rows: 0.2fr;
+      }
+    }
+  }
+  &__heading-type {
+    text-align: left;
+  }
+  &__technical-doc {
+    border-top: 1px solid $colorCard;
+    background-color: $colorBackSlider;
+  }
+  &__technical-doc-title {
+    padding-top: 10px;
+    padding-left: 16px;
+    padding-bottom: 10px;
+  }
+  &__technical-doc-text {
+    font-size: 16px;
+    color: $colorCard;
+  }
+  &__technical-datachit {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    @include gridDowloads;
+    @include mobileWidth {
+      & {
+        grid-template-columns: 1.5fr 1.1fr 1.1fr;
+        grid-template-rows: 0.2fr;
+      }
+    }
+  }
+  &__technical-data-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $colorCard;
+    text-decoration: underline;
+  }
+  &__technical-data-down-img {
+    @include mobileWidth {
+      & {
+        display: none;
+      }
+    }
+  }
+  &__date {
+    @include mobileWidth {
+      & {
+        display: none;
+      }
+    }
+  }
+  &__technical-data-text {
+    margin-right: 10px;
+    @include mobileWidth {
+      & {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.card-prod-cont-wrp {
+  @include widthCardCont;
+}
+
+.card-prod-promotional-goods {
+  padding: 0;
+  @include startAdaptiveSmol {
+    & {
+      @include padMob;
+    }
+  }
+  &__title {
+    padding-top: 16px;
+    padding-left: 16px;
+    margin-bottom: 32px;
+    font-size: 24px;
+  }
+  &__wrp {
+    background-color: $colorBackSlider;
   }
 }

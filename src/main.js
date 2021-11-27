@@ -16,7 +16,6 @@ createApp(starRating).use(VueAxios, axios).mount('#starRating');
 createApp(delivery).use(delivery).mount('#delivery');
 createApp(slider).use(slider).mount('#slider');
 
-// createApp(StarRating).use(StarRating).mount('#StarRating')
 
 const btnBuys = document.querySelectorAll('.vue-btnBuy');
 for (const btnBuy of btnBuys) {

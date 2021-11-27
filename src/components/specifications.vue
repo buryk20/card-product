@@ -1,7 +1,7 @@
 <template>
   <div class="card-prod-specific__wrp-cont">
     <h3 class="card-prod-specific__title">
-      <strong>Характеристики</strong>
+      <strong>Характеристики </strong>
       <span class="card-prod-specific__article"
         >GV-074-IP-H-COА14-20 3МР (Lite)</span
       >
