@@ -167,3 +167,24 @@ $colorBackSlider: #009b3e1a;
   width: 100%;
   margin-right: auto;
 }
+
+@mixin btnCardWhiteBackground {
+  padding: 8px 16px;
+  color: $colorCard;
+  border: 1px solid $colorCard;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+@mixin circleGray {
+  max-width: 62px;
+  width: 100%;
+  height: 62px;
+  background-color: #c4c4c4;
+  border-radius: 50%;
+}
+
+@mixin textTitleSlid {
+  font-size: 24px;
+  font-weight: 600;
+}

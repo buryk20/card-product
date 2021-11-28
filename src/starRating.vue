@@ -114,7 +114,7 @@ export default {
     margin-right: 16px;
     position: relative;
     &::before {
-      content: url("../public/icon/star-card-product-total-des.svg");
+      content: url("/icon/star-card-product-total-des.svg");
       display: block;
     }
   }
