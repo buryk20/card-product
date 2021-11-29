@@ -22,7 +22,7 @@
           alt="стрелка вверх"
         />
       </button>
-      <div class="my-w">
+      <div  class="my-w">
         <div
           class="card-prod-img__little-img-w"
           v-for="(item, index) in carousel_data"

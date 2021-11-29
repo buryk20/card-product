@@ -530,11 +530,6 @@
 
 .card-prod-specific {
   margin-bottom: 16px;
-  @include startAdaptiveSmol {
-    & {
-      @include padMob;
-    }
-  }
   &__wrp-cont {
     @include boxCardProd;
   }
@@ -570,11 +565,6 @@
 .card-prod-descriptiom {
   margin-bottom: 16px;
   font-size: 16px;
-  @include startAdaptiveSmol {
-    & {
-      @include padMob;
-    }
-  }
   &__wrp {
     @include boxCardProd;
   }
@@ -587,11 +577,6 @@
 .card-prod-downloads {
   margin-bottom: 16px;
   font-size: 16px;
-  @include startAdaptiveSmol {
-    & {
-      @include padMob;
-    }
-  }
   &__wrp {
     @include boxCardProd;
     padding: 0;
@@ -606,7 +591,7 @@
     margin-bottom: 16px;
     @include gridDowloads;
     color: $colorCardGrey;
-    @include mobileWidth {
+    @include bigMobileWidth {
       & {
         grid-template-columns: 1.5fr 1.1fr 1.1fr;
         grid-template-rows: 0.2fr;
@@ -634,7 +619,7 @@
     padding-bottom: 10px;
     padding-left: 16px;
     @include gridDowloads;
-    @include mobileWidth {
+    @include bigMobileWidth {
       & {
         grid-template-columns: 1.5fr 1.1fr 1.1fr;
         grid-template-rows: 0.2fr;
@@ -649,14 +634,14 @@
     text-decoration: underline;
   }
   &__technical-data-down-img {
-    @include mobileWidth {
+    @include bigMobileWidth {
       & {
         display: none;
       }
     }
   }
   &__date {
-    @include mobileWidth {
+    @include bigMobileWidth {
       & {
         display: none;
       }
@@ -664,7 +649,7 @@
   }
   &__technical-data-text {
     margin-right: 10px;
-    @include mobileWidth {
+    @include bigMobileWidth {
       & {
         margin-right: 0;
       }
@@ -674,15 +659,12 @@
 
 .card-prod-cont-wrp {
   @include widthCardCont;
+  margin-right: 16px;
+  box-sizing: border-box;
 }
 
 .card-prod-promotional-goods {
   padding: 0;
-  @include startAdaptiveSmol {
-    & {
-      @include padMob;
-    }
-  }
   &__title {
     padding-top: 16px;
     padding-left: 16px;
@@ -697,11 +679,6 @@
 .card-prod-reviews {
   margin-bottom: 16px;
   @include widthCardCont;
-  @include startAdaptiveSmol {
-    & {
-      @include padMob;
-    }
-  }
   &__wrp {
     padding-top: 20px;
     padding-left: 16px;
@@ -816,11 +793,15 @@
 .card-prod-body-cont {
   display: flex;
   flex-direction: row-reverse;
+  @include startAdaptiveSmol {
+    & {
+      @include padMob;
+    }
+  }
 }
 
 .floating-card-prod {
-  max-width: 286px;
-  width: 100%;
+  width: 286px;
   @include boxCardProd;
   &__wrp {
     position: relative;
@@ -833,4 +814,53 @@
   &__icon-like {
     margin-bottom: 21px;
   }
+  &__price {
+    display: none;
+    font-size: 34px;
+  }
+  &__price-wrp {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: flex-end;
+  }
+  &__price-sale {
+    margin-right: 7px;
+    color: #ff0000;
+    font-size: 34px;
+    font-weight: 600;
+  }
+  &__old-price {
+    font-size: 16px;
+    text-decoration: line-through;
+    text-transform: uppercase;
+  }
+  &__name {
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  &__art {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  &__btn {
+    margin-top: 10px;
+    @include btnCardTransparent;
+  }
+  &__btn-wrp {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.cardProdInfoDelivActive {
+  opacity: 1;
+  transition: 0.9s;
+}
+
+.cardProdInfoDelivActiveOd {
+  color: $colorCard;
+  border-top: 3px solid #009b3e;
+  transition: 0.6s;
 }

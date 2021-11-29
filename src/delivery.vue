@@ -7,12 +7,16 @@
                 <div>
                   <div class="card-prod-info-deliv__btn-wrp">
                     <div class="card-prod-info-deliv__line"></div> 
-                    <button v-on:click="odActive" class="card-prod-info-deliv__btn-od">Одесса</button>
-                    <button v-on:click="uaActive" class="card-prod-info-deliv__btn-ua">По Украине</button>
+                    <button 
+                    v-on:click="odActive" 
+                    v-bind:class="{ cardProdInfoDelivActiveOd: isActive}" class="card-prod-info-deliv__btn-od">Одесса</button>
+                    <button 
+                    v-on:click="uaActive"
+                    v-bind:class="{ cardProdInfoDelivActiveOd: isActiveUa}" class="card-prod-info-deliv__btn-ua">По Украине</button>
                   </div>
                 </div>
                 <div class="card-prod-info-deliv__wrp-condi">
-                  <div class="card-prod-info-deliv__wrp-od-pos" v-bind:class="{ active: isActive}">
+                  <div class="card-prod-info-deliv__wrp-od-pos" v-bind:class="{ cardProdInfoDelivActive: isActive}">
                     <div class="card-prod-info-deliv__wrp-condi-od">
                       <div class="card-prod-info-deliv__wrp-text-od">
                         <strong>Самовывоз</strong> <span class="card-prod-info-deliv__text-gray"> завтра </span><span class="card-prod-info-deliv__text-green">Бесплатно</span>
@@ -22,7 +26,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="card-prod-info-deliv__wrp-ua-pos" v-bind:class="{ active: isActiveUa}">
+                  <div class="card-prod-info-deliv__wrp-ua-pos" v-bind:class="{ cardProdInfoDelivActive: isActiveUa}">
                     <div >
                       <div class="card-prod-info-deliv__wrp-text-od">
                         <strong>Отделение “Новая Почта”</strong>
@@ -58,18 +62,14 @@ export default ({
       uaActive () {
         this.isActive = false,
         this.isActiveUa = true
+        console.log("2");
       }
     }
   })
 </script>
 
-<style lang="scss" scoped>
-@import "scss/_main_variable_gv.scss";
-@import "scss/main_card.scss";
+<style lang="scss" src="./scss/main_card.scss" scoped>
 
-.active {
-    opacity: 1;
-    transition: 0.9s;
-}
+
 
 </style>
