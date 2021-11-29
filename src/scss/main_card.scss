@@ -140,6 +140,8 @@
         }
       }
       &__price-buy-wrp {
+        max-width: 272px;
+        width: 100%;
         margin-right: 15px;
         @include mobileWidth {
           & {
@@ -325,13 +327,13 @@
         }
       }
       &__img-pos {
-        max-width: 134px;
+        max-width: 118px;
         margin-bottom: 10px;
         display: flex;
         align-items: center;
         text-transform: uppercase;
         color: $colorCard;
-        font-size: 12px;
+        font-size: 10px;
         line-height: 12px;
         img {
           margin-right: 5px;
@@ -811,8 +813,24 @@
   }
 }
 
+.card-prod-body-cont {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .floating-card-prod {
   max-width: 286px;
   width: 100%;
   @include boxCardProd;
+  &__wrp {
+    position: relative;
+  }
+  &__icon-wrp {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &__icon-like {
+    margin-bottom: 21px;
+  }
 }

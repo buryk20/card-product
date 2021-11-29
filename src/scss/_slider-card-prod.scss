@@ -2,7 +2,7 @@
 @import "_main_variable_gv.scss";
 
 .card-prod-img {
-  max-width: 894px;
+  max-width: 590px;
   width: 100%;
   margin-right: 16px;
 
@@ -135,7 +135,7 @@
 
   &__wrp-min-img {
     padding-top: 17px;
-    padding: 27px 16px;
+    padding: 27px 16px 27px 0;
     position: relative;
     display: flex;
     align-items: center;
@@ -190,6 +190,8 @@
   &__wrp {
     margin-bottom: 16px;
     @include boxCardProd;
+    padding-left: 14px;
+    padding-right: 4px;
   }
 }
 
