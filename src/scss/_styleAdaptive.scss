@@ -9,13 +9,21 @@ $staticPlockSolor: 1412px;
 $smallestScreenWidth: 1080px;
 $smScreenHeight: 720px;
 $bigMobileWidth: 960px;
+$floatingCard: 860px;
 $mobileWidth: 680px;
 $mobileHeight: 600px;
 $blockImgStatic: 510px;
 $snakeSolor: 491px;
-$littleMob: 397px; 
+$littleMob: 397px;
 
 $heightBan: 500px;
+
+@mixin floatingCard {
+  @media (max-width: $floatingCard) {
+    @content;
+  }
+}
+
 
 @mixin snakeSolor {
   @media (max-width: $snakeSolor) {
