@@ -67,7 +67,7 @@
     }
   }
   &__list {
-    border-top: 3px solid #009b3e00;
+    border-top: 4px solid #009b3e00;
     padding-top: 11px;
     margin-bottom: 11px;
     z-index: 10;
@@ -80,7 +80,7 @@
     &:hover,
     &:active {
       color: $colorCard;
-      border-top: 3px solid $colorCard;
+      border-top: 4px solid $colorCard;
       transition: 0.6s;
     }
     @include bigMobileWidth {
@@ -227,6 +227,7 @@
         @include mobileWidth {
           & {
             font-size: 24px;
+            margin-bottom: 0;
           }
         }
       }
@@ -309,7 +310,7 @@
         @include mobileWidth {
           & {
             display: block;
-            min-height: 40px;
+            min-height: 29px;
           }
         }
       }
@@ -919,5 +920,6 @@
 }
 
 .navActivColor {
-  color:#009b3e;
+  color: $colorCard;
+  border-top: 4px solid $colorCard;
 }
