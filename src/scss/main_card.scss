@@ -113,6 +113,17 @@
     .card-prod-info {
       max-width: 894px;
       width: 100%;
+      &__price-btn {
+        @include btnCardBuy;
+        &:hover {
+          background-color: $colorHov;
+        }
+        @include mobileWidth {
+          & {
+            max-width: none;
+          }
+        }
+      }
       @include bigMobileWidth {
         & {
           max-width: 100%;
@@ -148,6 +159,7 @@
         @include floatingCard {
           & {
             max-width: none;
+            margin-bottom: 0;
           }
         }
       }
@@ -207,7 +219,6 @@
       &__volue-wrp {
         @include floatingCard {
           & {
-            margin-bottom: 14px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -902,9 +913,13 @@
 .card-prod-nav-specificarins {
   display: none;
   &__wrp {
-    max-width: 1196px;
-    width: 100%;
+    @include widthCardCont;
     margin-right: 16px;
+    @include floatingCard {
+      & {
+        margin-right: 0;
+      }
+    }
   }
   &__specif {
     margin-bottom: 16px;
@@ -920,10 +935,6 @@
       }
     }
   }
-}
-
-.active-js-nav {
-  display: block;
 }
 
 .navActivColor {
@@ -954,4 +965,24 @@
       display: none;
     }
   }
+}
+
+.card-prod-nav-reviews {
+  display: none;
+  @include startAdaptiveSmol {
+    & {
+      @include padMob;
+    }
+  }
+  &__wrp {
+    @include widthCardCont;
+  }
+  &__wrp-pos {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.active-js-nav {
+  display: block;
 }

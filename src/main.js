@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import store from './store';
-import starRating from './starRating.vue';
+import starRating from './components/starRating.vue';
 import btnTrans from './components/btn-semi-transparent.vue';
 import buttonBuy from './btnBuy.vue';
 import delivery from './delivery.vue';

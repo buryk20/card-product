@@ -9,22 +9,7 @@ export default ({
 })
 </script>
 
-<style lang="scss" scoped>
-@import "scss/_main_variable_gv.scss";
-@import "scss/_styleAdaptive.scss";
+<style lang="scss" src="./scss/main_card.scss" scoped>
 
-.card-prod-info {
-    &__price-btn {
-        @include btnCardBuy;
-        &:hover {
-            background-color: $colorHov;
-        }
-        @include mobileWidth {
-            & {
-                max-width: none;
-            }
-        }
-    }            
-}
 
 </style>
