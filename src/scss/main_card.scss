@@ -118,6 +118,13 @@
           max-width: 100%;
         }
       }
+      &__price-dez {
+        @include mobileWidth {
+          & {
+            display: none;
+          }
+        }
+      }
       &__icon-wrp {
       }
       &__price {
@@ -135,10 +142,10 @@
         width: 100%;
         @include smallestScreenWidth {
           & {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
           }
         }
-        @include mobileWidth {
+        @include floatingCard {
           & {
             max-width: none;
           }
@@ -148,7 +155,7 @@
         max-width: 272px;
         width: 100%;
         margin-right: 15px;
-        @include mobileWidth {
+        @include floatingCard {
           & {
             max-width: 100%;
             margin-right: 0;
@@ -160,7 +167,7 @@
         &:hover {
           background-color: $colorHov;
         }
-        @include mobileWidth {
+        @include floatingCard {
           & {
             max-width: none;
           }
@@ -198,7 +205,7 @@
         }
       }
       &__volue-wrp {
-        @include mobileWidth {
+        @include floatingCard {
           & {
             margin-bottom: 14px;
             display: flex;
@@ -307,7 +314,7 @@
       &__availability-mob {
         display: none;
         @include btnCardTransparent;
-        @include mobileWidth {
+        @include floatingCard {
           & {
             display: block;
             min-height: 29px;
@@ -922,4 +929,29 @@
 .navActivColor {
   color: $colorCard;
   border-top: 4px solid $colorCard;
+}
+
+.fixed-price-mob {
+  display: none;
+  z-index: 20;
+  @include padMob;
+  @include floatingCard {
+    & {
+      display: block;
+      position: sticky;
+      bottom: 0;
+    }
+  }
+  &__wrp {
+    @include boxCardProd;
+    background-color: #ffffff;
+  }
+}
+
+.floating-card-prod-mob {
+  @include floatingCard {
+    & {
+      display: none;
+    }
+  }
 }
