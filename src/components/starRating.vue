@@ -3,40 +3,31 @@
     <div class="rating">
       <div class="rating__body">
         <div
-          v-bind:style="{ width: `${v_userRaring * 20}%` }"
+          v-bind:style="{ width: `${userRaring * 20}%` }"
           class="rating__active"
         ></div>
-        <starR />
+        <stars v-model="userRaring" v-model:title='userRaring'></stars>
       </div>
-      <div class="rating__value">{{ v_userRaring }} {{ reviewsText }}</div>
+      <div class="rating__value">{{ userRaring }} {{ reviewsText }}</div>
     </div>
   </div>
 </template>
 
 <script>
-
-import starR from './stars.vue'
+import stars from "./stars.vue";
 
 export default {
   name: "starRating",
   components: {
-    starR
+    stars,
   },
   data() {
     return {
+      userRaring: 0,
       reviewsText: "отзывы",
     };
   },
-  props: {
-    v_userRaring: {
-      type: Number,
-      default: 0
-    }
-  }
 };
 </script>
 
-<style lang="scss" src="../scss/_star-rating.scss" scoped>
-
-
-</style>
+<style lang="scss" src="../scss/_star-rating.scss" scoped></style>

@@ -13,17 +13,18 @@ window.onload = function () {
   }
   navJs.onclick = function (event) {
     var interEvent = event.target;
+    var classClose = interEvent.closest(".card-prod-new-navig__list");
     if (interEvent.classList.contains("allAboutProd")) {
       arrNav();
       activNavColor.classList.add("navActivColor");
       allAboutProduct.classList.add("active-js-nav");
     } else if (interEvent.classList.contains("specificNav")) {
       arrNav();
-      interEvent.closest(".card-prod-new-navig__list").classList.add("navActivColor");
+      classClose.classList.add("navActivColor");
       navSpecificarins.classList.add("active-js-nav");
     } else if (interEvent.classList.contains("navReviews")) {
       arrNav();
-      interEvent.closest(".card-prod-new-navig__list").classList.add("navActivColor");
+      classClose.classList.add("navActivColor");
       navReviews.classList.add("active-js-nav");
     }
   };

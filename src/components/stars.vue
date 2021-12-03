@@ -1,64 +1,72 @@
 <template>
   <div>
-        <div class="rating__items">
-            <input
-            type="radio"
-            name="ration"
-            v-model="userRaring"
-            class="rating__item"
-            value="1"
-            />
-            <input
-            type="radio"
-            name="ration"
-            v-model="userRaring"
-            class="rating__item"
-            value="2"
-            />
-            <input
-            type="radio"
-            name="ration"
-            v-model="userRaring"
-            class="rating__item"
-            value="3"
-            />
-            <input
-            type="radio"
-            name="ration"
-            v-model="userRaring"
-            class="rating__item"
-            value="4"
-            />
-            <input
-            type="radio"
-            name="ration"
-            v-model="userRaring"
-            class="rating__item"
-            value="5"
-            />
-        <starRating :v_userRaring="userRaring"></starRating>   
-        </div>
+    <div class="rating__items">
+      <input
+        type="radio"
+        name="ration"
+        v-model="userRaring"
+        class="rating__item"
+        value="1"
+      />
+      <input
+        type="radio"
+        name="ration"
+        v-model="userRaring"
+        class="rating__item"
+        value="2"
+      />
+      <input
+        type="radio"
+        name="ration"
+        v-model="userRaring"
+        class="rating__item"
+        value="3"
+      />
+      <input
+        type="radio"
+        name="ration"
+        v-model="userRaring"
+        class="rating__item"
+        value="4"
+      />
+      <input
+        type="radio"
+        name="ration"
+        v-model="userRaring"
+        class="rating__item"
+        value="5"
+      />
     </div>
+  </div>
 </template>
 
 <script>
-
-import starRating from './starRating.vue'
-
 export default {
-  name: "star-r",
-  components: {
-    starRating
+  name: "stars",
+  props: {
+    modelValue: Number,
+    title: String,
   },
+  emits: ["update:modelValue", "update:title"],
   data() {
     return {
-      userRaring: 0
+      userRaring: this.modelValue,
     };
-  }
+  },
+  methods: {
+    changeRating(userRaring) {
+      this.$emit("update:modelValue", userRaring); // previously was `this.$emit('input', title)`
+    },
+    changeTitle(title) {
+      this.$emit("update:title", title); // previously was `this.$emit('input', title)`
+    },
+  },
+  watch: {
+    userRaring(newVal) {
+      this.changeRating(newVal);
+    },
+  },
 };
 </script>
 
-<style lang="scss" src="../scss/_star-rating.scss" scoped>
-
-
-</style>
+<style lang="scss" src="../scss/_star-rating.scss" scoped></style>
