@@ -1,6 +1,7 @@
 <template>
-<div class="floating-card-prod">
-    <div class="floating-card-prod__wrp">
+<div class="floating-card-prod__pos-wrp">
+    <div class="floating-card-prod">
+        <div class="floating-card-prod__wrp">
         <img src="/img/img-card-prod.png" alt="Товар">
         <div class="floating-card-prod__icon-wrp">
             <a href="#">
@@ -22,6 +23,7 @@
             <button class="floating-card-prod__btn"><a href="#specific">Характеристики</a></button>
             <button class="floating-card-prod__btn"><a href="#descriptiom">Описание</a></button>
             <button class="floating-card-prod__btn"><a href="#reviews">Отзывы</a></button>
+        </div>
         </div>
     </div>
 </div>
