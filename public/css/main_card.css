@@ -373,12 +373,18 @@ label {
   margin-bottom: 16px;
 }
 
+.card-prod-nav-reviews__pos {
+  max-width: 1198px;
+  width: 100%;
+}
+
 .overall-rating-card-prod {
   padding: 16px 20px;
   box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   max-width: 405px;
   width: 100%;
+  margin-right: 16px;
   padding: 16px;
 }
 
@@ -408,8 +414,29 @@ label {
   text-align: center;
 }
 
+.reviews-slider-card-prod {
+  max-width: 777px;
+  width: 100%;
+  padding: 16px 20px;
+  box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.reviews-slider-card-prod__title {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.reviews-page-top-card {
+  display: flex;
+}
+
 .rating-scale {
   position: relative;
+}
+
+.rating-scale__wrp + .rating-scale__wrp {
+  margin-top: 10px;
 }
 
 .rating-scale__wrp {

@@ -16,11 +16,16 @@
     padding-left: 16px;
     margin-bottom: 16px;
   }
+  &__pos {
+    max-width: 1198px;
+    width: 100%;
+  }
 }
 .overall-rating-card-prod {
   @include boxCardProd;
   max-width: 405px;
   width: 100%;
+  margin-right: 16px;
   padding: 16px;
   &__wrp {
     display: flex;
@@ -45,8 +50,26 @@
   }
 }
 
+.reviews-slider-card-prod {
+  max-width: 777px;
+  width: 100%;
+  @include boxCardProd;
+
+  &__title {
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
+
+.reviews-page-top-card {
+  display: flex;
+}
+
 .rating-scale {
   position: relative;
+  &__wrp + &__wrp {
+    margin-top: 10px;
+  }
   &__wrp {
     width: 124px;
     position: relative;
