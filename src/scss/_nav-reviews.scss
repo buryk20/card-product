@@ -56,6 +56,7 @@
   @include boxCardProd;
 
   &__title {
+    margin-bottom: 24px;
     font-size: 18px;
     font-weight: 400;
   }
@@ -67,6 +68,7 @@
 
 .rating-scale {
   position: relative;
+  z-index: 5;
   &__wrp + &__wrp {
     margin-top: 10px;
   }
@@ -107,5 +109,53 @@
   &__num-style {
     color: $colorCard;
     text-decoration: underline;
+  }
+}
+
+.slider-rev {
+  &__img {
+    max-width: 170px;
+    border: $line-grey-col;
+    border-radius: 8px;
+  }
+  &__img + &__img {
+    margin-left: 16px;
+  }
+  &__wrp {
+    max-width: 728px;
+    overflow: hidden;
+  }
+  &__img-wrp {
+    display: flex;
+  }
+}
+
+.pop-up-reviews-card {
+  @include boxCardProd;
+  max-width: 499px;
+  width: 100%;
+  &__title {
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  &__star-wrp {
+    margin-bottom: 32px;
+  }
+  &__inp-style {
+    margin-bottom: 10px;
+    @include borderFormCard;
+  }
+  &__inp-comments {
+    @include borderFormCard;
+    min-height: 91px;
+  }
+  &__lab {
+    margin-bottom: 5px;
+    display: flex;
+    font-size: 12px;
+  }
+  &__video-wrp {
+    display: flex;
   }
 }

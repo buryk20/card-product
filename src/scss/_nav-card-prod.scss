@@ -109,6 +109,8 @@
     flex-direction: column;
   }
   &__pos-wrp {
+    position: sticky;
+    top: 16px;
     @include floatingCard {
       & {
         display: none;

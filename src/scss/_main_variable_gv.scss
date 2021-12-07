@@ -12,6 +12,7 @@ $colorCard: #009b3e;
 $btnTransparentCol: #009b3e1a;
 $colorCardGrey: #8a8a8a;
 $colorBackSlider: #009b3e1a;
+$borderForm: 1px solid $colorCardGrey;
 
 //вложенности
 %icon-position-cent {
@@ -44,6 +45,15 @@ $colorBackSlider: #009b3e1a;
 }
 
 //mixin
+
+@mixin borderFormCard {
+  border: $borderForm;
+  max-width: 467px;
+  width: 100%;
+  min-height: 44px;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
 
 @mixin gridDowloads {
   display: grid;

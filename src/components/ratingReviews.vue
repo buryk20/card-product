@@ -54,18 +54,47 @@
     </div>
     <div class="reviews-slider-card-prod">
       <h4 class="reviews-slider-card-prod__title">Фото и видео покупателей</h4>
+      <sliderRev :carousel_data="sliderItems"></sliderRev>
+    </div>
+  </div>
+  <reviewsText></reviewsText>
+  <div class="pop-up-reviews-card">
+    <h4 class="pop-up-reviews-card__title">Написать отзыв</h4>
+    <stars class="pop-up-reviews-card__star-wrp"></stars>
+    <div>
+      <form action="#">
+        <label class="pop-up-reviews-card__lab" for="dignity">Достоинство</label>
+        <input class="pop-up-reviews-card__inp-style" type="text">
+        <label class="pop-up-reviews-card__lab" for="limitations">Недостатки</label>
+        <input class="pop-up-reviews-card__inp-style" type="text">
+        <label class="pop-up-reviews-card__lab" for="comments">Комментарий</label>
+        <input class="pop-up-reviews-card__inp-comments" type="text">
+      </form>
+      <form class="pop-up-reviews-card__video-wrp" action="#">
+        <div>
+          <label class="pop-up-reviews-card__lab" for="video">Ссылка на видео с Youtube</label>
+          <input class="pop-up-reviews-card__inp-style" type="url">
+        </div>
+        <input type="button" value="Добавить видео">
+      </form>
     </div>
   </div>
 </template>
 
 <script>
 
-import starReviews from './starReviews.vue'
+import starReviews from './starReviews.vue';
+import sliderRev from './slider-reviews.vue';
+import reviewsText from './reviews-text.vue';
+import stars from './stars.vue';
 
 export default {
   name: 'ratingReview',
   components: {
-    starReviews
+    starReviews,
+    sliderRev,
+    reviewsText,
+    stars
   },
   data () {
     return {
@@ -80,7 +109,6 @@ export default {
       averageTwo: 2,
       averageOne: 0,
       numberOfReviews: 2,
-<<<<<<< HEAD
       sliderItems: [
             { id: 1, name: 'img1', img: '1.png'},
             { id: 2, name: 'img2', img: '6626_2.png'},
@@ -89,8 +117,6 @@ export default {
             { id: 5, name: 'img2', img: '6626_5.png'},
             { id: 6, name: 'img2', img: '6626_4.png'}
           ]
-=======
->>>>>>> 3d5fda366e9e40226e5f6889507db891113c6a6d
     }
   }
 }

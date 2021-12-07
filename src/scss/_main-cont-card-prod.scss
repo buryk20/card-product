@@ -164,7 +164,22 @@
     font-size: 18px;
   }
   &__btn {
-    @include btnCardWhiteBackground;
+    @include btnCardBuy;
+    max-width: 250px;
+  }
+  &__btn-wrp {
+    margin-bottom: 16px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $colorBackSlider;
+    border: 1px solid $colorCard;
+    border-radius: 8px;
+  }
+  &__btn-text {
+    font-size: 18px;
+    color: $colorCard;
   }
   &__box {
     @include boxCardProd;
@@ -231,10 +246,13 @@
     text-decoration: underline;
   }
   &__answer-pos {
-    max-width: 100px;
+    max-width: 110px;
     width: 100%;
     display: flex;
     align-items: center;
+  }
+  &__answer-pos-icon {
+    margin-right: 10px;
   }
   &__line {
     width: 100%;
