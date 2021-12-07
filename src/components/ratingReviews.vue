@@ -54,21 +54,18 @@
     </div>
     <div class="reviews-slider-card-prod">
       <h4 class="reviews-slider-card-prod__title">Фото и видео покупателей</h4>
-      <sliderRev :slider_data="sliderItems"></sliderRev>
-    </div> 
-  </div>  
+    </div>
+  </div>
 </template>
 
 <script>
 
-import starReviews from './starReviews.vue';
-import sliderRev from './slider-reviews.vue'
+import starReviews from './starReviews.vue'
 
 export default {
   name: 'ratingReview',
   components: {
-    starReviews,
-    sliderRev
+    starReviews
   },
   data () {
     return {
@@ -83,6 +80,7 @@ export default {
       averageTwo: 2,
       averageOne: 0,
       numberOfReviews: 2,
+<<<<<<< HEAD
       sliderItems: [
             { id: 1, name: 'img1', img: '1.png'},
             { id: 2, name: 'img2', img: '6626_2.png'},
@@ -91,6 +89,8 @@ export default {
             { id: 5, name: 'img2', img: '6626_5.png'},
             { id: 6, name: 'img2', img: '6626_4.png'}
           ]
+=======
+>>>>>>> 3d5fda366e9e40226e5f6889507db891113c6a6d
     }
   }
 }
