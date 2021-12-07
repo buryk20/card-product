@@ -42,14 +42,6 @@
                 <p class="rating-scale__num-style">{{ numberStarsTwo }}</p>
           </div>
           <div class="rating-scale__wrp">
-              <p class="rating-scale__num">2</p><img class="rating-scale__star-icon" src="/icon/star-card-product.svg" alt="stars">
-              <div class="rating-scale__pos-wrp">
-                <div v-bind:style="{ width: `${averageTwo * 10}%` }" class="rating-scale__act"></div>
-                <div class="rating-scale__des"></div>
-              </div>
-                <p class="rating-scale__num-style">{{ numberStarsTwo }}</p>
-          </div>
-          <div class="rating-scale__wrp">
               <p class="rating-scale__num">1</p><img class="rating-scale__star-icon" src="/icon/star-card-product.svg" alt="stars">
               <div class="rating-scale__pos-wrp">
                 <div v-bind:style="{ width: `${numberStarsOne * 10}%` }" class="rating-scale__act"></div>
@@ -62,8 +54,8 @@
     </div>
     <div class="reviews-slider-card-prod">
       <h4 class="reviews-slider-card-prod__title">Фото и видео покупателей</h4>
-    </div> 
-  </div>  
+    </div>
+  </div>
 </template>
 
 <script>
