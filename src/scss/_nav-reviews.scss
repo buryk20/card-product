@@ -157,5 +157,71 @@
   }
   &__video-wrp {
     display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__wrp-bene {
+    margin-bottom: 16px;
+  }
+  &__video-btn {
+    @include btnCardBuy;
+    height: 40px;
+    max-width: 171px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    &:hover {
+      background-color: $colorHov;
+    }
+  }
+  &__video {
+    max-width: 280px;
+    width: 100%;
+  }
+  &__photo {
+    margin-bottom: 10px;
+    padding: 16px 16px 10px 10px;
+    border: $borderForm;
+    border-radius: 8px;
+  }
+  &__photo-text-wrp {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+  }
+  &__photo-btn {
+    @include btnCardBuy;
+    max-width: 168px;
+    height: 40px;
+    font-size: 18px;
+    &:hover {
+      background-color: $colorHov;
+    }
+  }
+  &__img-wrp {
+    width: 65px;
+    height: 65px;
+    position: relative;
+    border: $borderForm;
+    border-radius: 8px;
+    cursor: pointer;
+    &:hover .pop-up-reviews-card__img-del {
+      opacity: 1;
+      transition: 0.3s;
+    }
+    &:hover {
+      border: 1px solid $colorCard;
+    }
+  }
+  &__img-del {
+    position: absolute;
+    top: 19px;
+    left: 21px;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  &__photo-text {
+    max-width: 254px;
   }
 }
