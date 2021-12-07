@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import vCarousel from './components/v-carouse.vue'
+import vCarousel from './components/v-carouse.vue';
 
 export default {
   name: 'Slider',
