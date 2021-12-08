@@ -46,6 +46,14 @@ $borderForm: 1px solid $colorCardGrey;
 
 //mixin
 
+@mixin btnCancel {
+  padding: 8px 16px;
+  background-color: $colorCardGrey;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 18px;
+}
+
 @mixin borderFormCard {
   border: $borderForm;
   max-width: 467px;
@@ -72,6 +80,7 @@ $borderForm: 1px solid $colorCardGrey;
   border-radius: 6px;
   color: #ffffff;
   background-color: $colorCard;
+  font-size: 18px;
 }
 
 @mixin underlinedGreenText {

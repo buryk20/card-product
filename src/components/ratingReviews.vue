@@ -60,7 +60,52 @@
   <reviewsText></reviewsText>
   <div class="pop-up-reviews-card">
     <h4 class="pop-up-reviews-card__title">Написать отзыв</h4>
-    <stars class="pop-up-reviews-card__star-wrp"></stars>
+    <!-- <stars class="pop-up-reviews-card__star-wrp"></stars> -->
+    <div>
+      <div class="rating__body">
+        <div
+          v-bind:style="{ width: `${userRaring * 20}%` }"
+          class="rating__active"
+        ></div>
+        <div class="rating__items">
+          <input
+            type="radio"
+            name="ration"
+            v-model="userRaring"
+            class="rating__item"
+            value="1"
+          />
+          <input
+            type="radio"
+            name="ration"
+            v-model="userRaring"
+            class="rating__item"
+            value="2"
+          />
+          <input
+            type="radio"
+            name="ration"
+            v-model="userRaring"
+            class="rating__item"
+            value="3"
+          />
+          <input
+            type="radio"
+            name="ration"
+            v-model="userRaring"
+            class="rating__item"
+            value="4"
+          />
+          <input
+            type="radio"
+            name="ration"
+            v-model="userRaring"
+            class="rating__item"
+            value="5"
+          />
+        </div>
+      </div>
+    </div>
     <div>
       <form class="pop-up-reviews-card__wrp-bene" action="#">
         <label class="pop-up-reviews-card__lab" for="dignity">Достоинство</label>
@@ -87,7 +132,7 @@
         <div>
           <div class="pop-up-reviews-card__img-wrp">
             <img class="pop-up-reviews-card__img-del" src="/icon/icon-del-pop-up-card-prod.svg" alt="удалить">
-            <img src="" alt="изображение товара">
+            <img src="" onerror='this.style.display = "none"' alt="изображение товара">
           </div>
         </div>
       </div>
@@ -98,16 +143,16 @@
         <input class="pop-up-reviews-card__inp-style" type="email">
       </form>
       <form action="#">
-        <input type="checkbox" id="agreement">
+        <input class="pop-up-reviews-card__cust-chec" type="checkbox" id="agreement">
         <label for="agreement">Уведомлять об ответах по электронной почте</label>
       </form>
-      <div>
-        <button>Отменить</button>
-        <button>Оставить отзыв</button>
+      <div class="pop-up-reviews-card__btn-wrp">
+        <button class="pop-up-reviews-card__btn-cancel">Отменить</button>
+        <button class="pop-up-reviews-card__btn">Оставить отзыв</button>
       </div>
-      <div>
+      <div class="pop-up-reviews-card__text-wrp">
         <p>
-          Чтобы ваш отзыв либо комментарий прошел модерацию и был опубликован, ознакомьтесь, пожалуйста, <span> с нашими правилами.</span>
+          Чтобы ваш отзыв либо комментарий прошел модерацию и был опубликован, ознакомьтесь, пожалуйста, c<a class="pop-up-reviews-card__text-link" href="#"> нашими правилами.</a>
         </p>
       </div>
     </div>
@@ -119,15 +164,14 @@
 import starReviews from './starReviews.vue';
 import sliderRev from './slider-reviews.vue';
 import reviewsText from './reviews-text.vue';
-import stars from './stars.vue';
+// import stars from './stars.vue';
 
 export default {
   name: 'ratingReview',
   components: {
     starReviews,
     sliderRev,
-    reviewsText,
-    stars
+    reviewsText
   },
   data () {
     return {
@@ -153,7 +197,7 @@ export default {
     }
   },
   methods: {
-    
+
   }
 }
 </script>

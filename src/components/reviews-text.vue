@@ -7,7 +7,7 @@
     </div>
     <div class="card-prod-reviews__btn-wrp">
         <p class="card-prod-reviews__btn-text">Оставьте свой отзыв об этом товаре</p>
-        <button class="card-prod-reviews__btn">Написать отзыв</button>
+        <button v-on:click="popUp"  class="card-prod-reviews__btn">Написать отзыв</button>
     </div>
     <div class="card-prod-reviews__box">
         <div>
@@ -139,7 +139,26 @@
 <script>
 
 export default ({
-    name: "reviewsText"
+    name: "reviewsText",
+    data() {
+        return {
+            activePopUp: false
+        }
+    },
+    methods: {
+        popUp(){
+            this.activePopUp = true;
+            console.log(this.activePopUp);
+        },
+        changeRating(activePopUp) {
+        this.$emit("update:modelValue", activePopUp); // previously was `this.$emit('input', title)`
+        },
+    },
+    watch: {
+        userRaring(newVal) {
+        this.changeRating(newVal);
+        },
+    },
 })
 </script>
 
