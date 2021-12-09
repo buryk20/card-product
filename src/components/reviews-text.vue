@@ -140,6 +140,7 @@
 
 export default ({
     name: "reviewsText",
+    emits: ["update:modelValue"],
     data() {
         return {
             activePopUp: false
@@ -149,16 +150,16 @@ export default ({
         popUp(){
             this.activePopUp = true;
             console.log(this.activePopUp);
-        },
-        changeRating(activePopUp) {
-        this.$emit("update:modelValue", activePopUp); // previously was `this.$emit('input', title)`
-        },
-    },
-    watch: {
-        userRaring(newVal) {
-        this.changeRating(newVal);
-        },
-    },
+        }
+        // changeRating(activePopUp) {
+        // this.$emit("update:modelValue", activePopUp); // previously was `this.$emit('input', title)`
+        // },
+    }
+    // watch: {
+    //     activePopUp(actPop) {
+    //     this.popUp(actPop);
+    //     },
+    // },
 })
 </script>
 

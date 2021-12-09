@@ -57,8 +57,8 @@
       <sliderRev :carousel_data="sliderItems"></sliderRev>
     </div>
   </div>
-  <reviewsText></reviewsText>
-  <div class="pop-up-reviews-card">
+  <reviewsText :activePopUp='activePopUp'></reviewsText>
+  <div  v-bind:class="{ activPopUpRev: activePopUp}" class="pop-up-reviews-card">
     <h4 class="pop-up-reviews-card__title">Написать отзыв</h4>
     <!-- <stars class="pop-up-reviews-card__star-wrp"></stars> -->
     <div>
@@ -173,6 +173,9 @@ export default {
     sliderRev,
     reviewsText
   },
+  props: {
+    activePopUp: Boolean
+  },
   data () {
     return {
       numberStarsFive: 15,
@@ -195,8 +198,6 @@ export default {
             { id: 6, name: 'img2', img: '6626_4.png'}
           ]
     }
-  },
-  methods: {
 
   }
 }

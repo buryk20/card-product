@@ -849,6 +849,10 @@ label {
   color: #009b3e;
 }
 
+.activPopUpRev {
+  display: none;
+}
+
 .card-product-new-wrp {
   max-width: 1500px;
   width: 100%;
