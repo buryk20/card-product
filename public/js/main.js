@@ -3,6 +3,9 @@ window.onload = function () {
   var navSpecificarins = navJs.querySelector(".card-prod-nav-specificarins");
   var activNavColor = navJs.querySelector(".card-prod-new-navig__list");
   var navReviews = navJs.querySelector(".card-prod-nav-reviews");
+  var navMult = navJs.querySelector(".card-prod-nav-multimedia");
+  var navDov = navJs.querySelector(".card-prod-nav-downloads");
+  console.log(navMult);
   arrNav = function () {
     for (let j = 0; j < navActivJsColor.children.length; j++) {
       navActivJsColor.children[j].classList.remove('navActivColor');
@@ -18,14 +21,23 @@ window.onload = function () {
       arrNav();
       activNavColor.classList.add("navActivColor");
       allAboutProduct.classList.add("active-js-nav");
-    } else if (interEvent.classList.contains("specificNav")) {
+    }  if (interEvent.classList.contains("specificNav")) {
       arrNav();
       classClose.classList.add("navActivColor");
       navSpecificarins.classList.add("active-js-nav");
-    } else if (interEvent.classList.contains("navReviews")) {
+    }  if (interEvent.classList.contains("navReviews")) {
       arrNav();
       classClose.classList.add("navActivColor");
       navReviews.classList.add("active-js-nav");
+      console.log(navReviews);
+    } if (interEvent.classList.contains("navMultimedia")) {
+      arrNav();
+      classClose.classList.add("navActivColor");
+      navMult.classList.add("active-js-nav");
+    } if (interEvent.classList.contains("navDownloads")) {
+      arrNav();
+      classClose.classList.add("navActivColor");
+      navDov.classList.add("active-js-nav");
     }
   };
 };

@@ -71,7 +71,7 @@
         }
       }
       &__price-dez {
-        @include mobileWidth {
+        @include floatingCard {
           & {
             display: none;
           }

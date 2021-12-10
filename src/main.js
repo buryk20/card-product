@@ -12,12 +12,13 @@ import floatingCard from './components/floatingCard.vue';
 import ratingReview from './components/ratingReviews.vue';
 import starReview from './components/starReviews.vue';
 import reviewsText from './components/reviews-text.vue';
+import GlobalFunction from './tools/globalFunc'
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 createApp(App).use(store).mount('#app');
-createApp(starRating).use(VueAxios, axios).mount('#starRating');
+createApp(starRating).use(VueAxios, axios).use.apply(GlobalFunction).mount('#starRating');
 createApp(delivery).use(delivery).mount('#delivery');
 createApp(slider).use(slider).mount('#slider');
 

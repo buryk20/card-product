@@ -33,6 +33,11 @@
   width: 100%;
   margin-right: 16px;
   padding: 16px;
+  @include startAdaptiveSmol {
+    & {
+      margin-bottom: 16px;
+    }
+  }
 
   &__wrp {
     display: flex;
@@ -75,6 +80,11 @@
 
 .reviews-page-top-card {
   display: flex;
+  @include startAdaptiveSmol {
+    & {
+      flex-direction: column;
+    }
+  }
 }
 
 .rating-scale {

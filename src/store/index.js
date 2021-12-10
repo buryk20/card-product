@@ -1,16 +1,14 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
+import popups from "./modules/popups";
 
 export default createStore({
   state: {
-    card:{
-      img:'aaa',
-      textDesc:'aaa'
-    }
   },
   mutations: {
   },
   actions: {
   },
   modules: {
+    popups
   }
 })

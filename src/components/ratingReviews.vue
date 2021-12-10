@@ -57,7 +57,7 @@
       <sliderRev :carousel_data="sliderItems"></sliderRev>
     </div>
   </div>
-  <reviewsText :activePopUp='activePopUp'></reviewsText>
+  <reviewsText></reviewsText>
   <div  v-bind:class="{ activPopUpRev: activePopUp}" class="pop-up-reviews-card">
     <h4 class="pop-up-reviews-card__title">Написать отзыв</h4>
     <!-- <stars class="pop-up-reviews-card__star-wrp"></stars> -->
@@ -106,56 +106,60 @@
         </div>
       </div>
     </div>
-    <div>
-      <form class="pop-up-reviews-card__wrp-bene" action="#">
-        <label class="pop-up-reviews-card__lab" for="dignity">Достоинство</label>
-        <input class="pop-up-reviews-card__inp-style" type="text">
-        <label class="pop-up-reviews-card__lab" for="limitations">Недостатки</label>
-        <input class="pop-up-reviews-card__inp-style" type="text">
-        <label class="pop-up-reviews-card__lab" for="comments">Комментарий</label>
-        <input class="pop-up-reviews-card__inp-comments" type="text">
-      </form>
-      <form class="pop-up-reviews-card__video-wrp" action="#">
-        <div class="pop-up-reviews-card__video">
-          <label class="pop-up-reviews-card__lab" for="video">Ссылка на видео с Youtube</label>
-          <input class="pop-up-reviews-card__inp-style" type="url">
-        </div>
-        <input class="pop-up-reviews-card__video-btn" type="button" value="Добавить видео">
-      </form>
-      <div class="pop-up-reviews-card__photo">
-        <div class="pop-up-reviews-card__photo-text-wrp">
-          <p class="pop-up-reviews-card__photo-text">
-            Перетащите файлы сюда или нажмите на кнопку. Добавляйте до 10 изображений в форматах .jpg, .gif, .png, размером файла до 5 МБ
-          </p>
-          <button class="pop-up-reviews-card__photo-btn">Выбрать файлы</button>
-        </div>
+    <revPopUp id="rev-pop-up">
+      <template>
         <div>
-          <div class="pop-up-reviews-card__img-wrp">
-            <img class="pop-up-reviews-card__img-del" src="/icon/icon-del-pop-up-card-prod.svg" alt="удалить">
-            <img src="" onerror='this.style.display = "none"' alt="изображение товара">
+          <form class="pop-up-reviews-card__wrp-bene" action="#">
+            <label class="pop-up-reviews-card__lab" for="dignity">Достоинство</label>
+            <input class="pop-up-reviews-card__inp-style" type="text">
+            <label class="pop-up-reviews-card__lab" for="limitations">Недостатки</label>
+            <input class="pop-up-reviews-card__inp-style" type="text">
+            <label class="pop-up-reviews-card__lab" for="comments">Комментарий</label>
+            <input class="pop-up-reviews-card__inp-comments" type="text">
+          </form>
+          <form class="pop-up-reviews-card__video-wrp" action="#">
+            <div class="pop-up-reviews-card__video">
+              <label class="pop-up-reviews-card__lab" for="video">Ссылка на видео с Youtube</label>
+              <input class="pop-up-reviews-card__inp-style" type="url">
+            </div>
+            <input class="pop-up-reviews-card__video-btn" type="button" value="Добавить видео">
+          </form>
+          <div class="pop-up-reviews-card__photo">
+            <div class="pop-up-reviews-card__photo-text-wrp">
+              <p class="pop-up-reviews-card__photo-text">
+                Перетащите файлы сюда или нажмите на кнопку. Добавляйте до 10 изображений в форматах .jpg, .gif, .png, размером файла до 5 МБ
+              </p>
+              <button class="pop-up-reviews-card__photo-btn">Выбрать файлы</button>
+            </div>
+            <div>
+              <div class="pop-up-reviews-card__img-wrp">
+                <img class="pop-up-reviews-card__img-del" src="/icon/icon-del-pop-up-card-prod.svg" alt="удалить">
+                <img src="" onerror='this.style.display = "none"' alt="изображение товара">
+              </div>
+            </div>
+          </div>
+          <form action="#">
+            <label class="pop-up-reviews-card__lab" for="dignity">Ваше имя и фамилия</label>
+            <input class="pop-up-reviews-card__inp-style" type="text">
+            <label class="pop-up-reviews-card__lab" for="limitations">Электронная почта</label>
+            <input class="pop-up-reviews-card__inp-style" type="email">
+          </form>
+          <form action="#">
+            <input class="pop-up-reviews-card__cust-chec" type="checkbox" id="agreement">
+            <label for="agreement">Уведомлять об ответах по электронной почте</label>
+          </form>
+          <div class="pop-up-reviews-card__btn-wrp">
+            <button class="pop-up-reviews-card__btn-cancel">Отменить</button>
+            <button class="pop-up-reviews-card__btn">Оставить отзыв</button>
+          </div>
+          <div class="pop-up-reviews-card__text-wrp">
+            <p>
+              Чтобы ваш отзыв либо комментарий прошел модерацию и был опубликован, ознакомьтесь, пожалуйста, c<a class="pop-up-reviews-card__text-link" href="#"> нашими правилами.</a>
+            </p>
           </div>
         </div>
-      </div>
-      <form action="#">
-        <label class="pop-up-reviews-card__lab" for="dignity">Ваше имя и фамилия</label>
-        <input class="pop-up-reviews-card__inp-style" type="text">
-        <label class="pop-up-reviews-card__lab" for="limitations">Электронная почта</label>
-        <input class="pop-up-reviews-card__inp-style" type="email">
-      </form>
-      <form action="#">
-        <input class="pop-up-reviews-card__cust-chec" type="checkbox" id="agreement">
-        <label for="agreement">Уведомлять об ответах по электронной почте</label>
-      </form>
-      <div class="pop-up-reviews-card__btn-wrp">
-        <button class="pop-up-reviews-card__btn-cancel">Отменить</button>
-        <button class="pop-up-reviews-card__btn">Оставить отзыв</button>
-      </div>
-      <div class="pop-up-reviews-card__text-wrp">
-        <p>
-          Чтобы ваш отзыв либо комментарий прошел модерацию и был опубликован, ознакомьтесь, пожалуйста, c<a class="pop-up-reviews-card__text-link" href="#"> нашими правилами.</a>
-        </p>
-      </div>
-    </div>
+      </template>
+    </revPopUp>
   </div>
 </template>
 
@@ -164,6 +168,7 @@
 import starReviews from './starReviews.vue';
 import sliderRev from './slider-reviews.vue';
 import reviewsText from './reviews-text.vue';
+import revPopUp from './revPopUp.vue';
 // import stars from './stars.vue';
 
 export default {
@@ -171,7 +176,8 @@ export default {
   components: {
     starReviews,
     sliderRev,
-    reviewsText
+    reviewsText,
+    revPopUp
   },
   props: {
     activePopUp: Boolean
