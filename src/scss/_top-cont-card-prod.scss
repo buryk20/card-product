@@ -149,6 +149,8 @@
       }
       &__price-sale-wrp {
         display: none;
+        justify-content: space-between;
+        align-items: center;
         @include mobileWidth {
           & {
             margin-bottom: 14px;
@@ -160,14 +162,10 @@
       &__volue-wrp {
         @include floatingCard {
           & {
+            margin-bottom: 14px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-          }
-        }
-        @include mobileWidth {
-          & {
-            margin-bottom: 10px;
           }
         }
       }
@@ -176,7 +174,7 @@
         color: #ff0000;
         font-size: 48px;
         font-weight: 600;
-        @include mobileWidth {
+        @include floatingCard {
           & {
             margin-bottom: 0;
             margin-right: 7px;
@@ -188,7 +186,7 @@
         margin-bottom: 10px;
         font-size: 48px;
         font-weight: 600;
-        @include mobileWidth {
+        @include floatingCard {
           & {
             font-size: 24px;
             margin-bottom: 0;

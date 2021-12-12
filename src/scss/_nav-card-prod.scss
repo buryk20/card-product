@@ -177,6 +177,58 @@
 
 .card-prod-nav-multimedia {
   display: none;
+  @include startAdaptiveSmol {
+    & {
+      @include padMob;
+    }
+  }
+  &__wrp {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__wrp-pos {
+    padding-top: 16px;
+    width: 100%;
+    @include startAdaptiveSmol {
+      & {
+        margin-right: 16px;
+      }
+    }
+  }
+  &__title {
+    padding-left: 16px;
+    padding-top: 16px;
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 600;
+    @include floatingCard {
+      & {
+        font-size: 16px;
+      }
+    }
+  }
+  &__safety {
+    @include boxCardProd;
+    @include widthCardCont;
+    padding-bottom: 0;
+    font-size: 18px;
+  }
+  &__safety-vid {
+    max-width: 560px;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  &__safety-vid-wrp {
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    @include startAdaptiveSmol {
+      & {
+        // justify-content: space-around;
+      }
+    }
+  }
 }
 
 .card-prod-nav-downloads {
