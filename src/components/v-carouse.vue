@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="card-prod-img__wrp-min-img">
-      <button @click="prevSlide">
+      <button class="card-prod-img__btn-wrp" @click="prevSlide">
         <img
           class="card-prod-img__btn-up"
           src="/icon/slider-icon-up-card.svg"
@@ -38,7 +38,7 @@
           />
         </div>
       </div>
-      <button @click="nexSlide">
+      <button class="card-prod-img__btn-wrp" @click="nexSlide">
         <img src="/icon/slider-icon-down-card.svg" alt="стрелка вверх" />
       </button>
     </div>

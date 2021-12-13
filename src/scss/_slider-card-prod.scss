@@ -194,6 +194,11 @@
     padding-left: 14px;
     padding-right: 4px;
   }
+  &__btn-wrp {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .my-w {
