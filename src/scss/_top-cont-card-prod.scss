@@ -83,7 +83,7 @@
         margin-bottom: 16px;
         @include boxCardProd;
         display: flex;
-        @include smallestScreenWidth {
+        @include smScreenWidth {
           & {
             flex-direction: column;
           }
@@ -112,6 +112,11 @@
           & {
             max-width: 100%;
             margin-right: 0;
+          }
+        }
+        @include smScreenWidth {
+          & {
+            margin-bottom: 16px;
           }
         }
       }

@@ -233,6 +233,23 @@
 
 .card-prod-nav-downloads {
   display: none;
+  &__wrp {
+    @include widthCardCont;
+    margin-right: 16px;
+    @include floatingCard {
+      & {
+        margin-right: 0;
+      }
+    }
+  }
+  &__cont-wrp{
+    display: flex;
+    @include startAdaptiveSmol {
+      & {
+        @include padMob;
+      }
+    }
+  }
 }
 
 .active-js-nav {
