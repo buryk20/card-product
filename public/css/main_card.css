@@ -529,6 +529,7 @@ label {
   border-radius: 8px;
   max-width: 499px;
   width: 100%;
+  display: none;
 }
 
 .pop-up-reviews-card__title {
@@ -681,7 +682,7 @@ label {
 }
 
 .pop-up-reviews-card__cust-chec + label::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -764,6 +765,10 @@ label {
 
 .activPopUpRev {
   display: none;
+}
+
+.activePupUpRev {
+  display: block;
 }
 
 .card-product-new-wrp {

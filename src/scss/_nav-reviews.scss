@@ -91,7 +91,7 @@
   position: relative;
   z-index: 5;
 
-  &__wrp+&__wrp {
+  &__wrp + &__wrp {
     margin-top: 10px;
   }
 
@@ -147,7 +147,7 @@
     border-radius: 8px;
   }
 
-  &__img+&__img {
+  &__img + &__img {
     margin-left: 16px;
   }
 
@@ -165,7 +165,7 @@
   @include boxCardProd;
   max-width: 499px;
   width: 100%;
-
+  display: none;
   &__title {
     margin-bottom: 16px;
     font-size: 16px;
@@ -281,13 +281,13 @@
     opacity: 0;
   }
 
-  &__cust-chec+label {
+  &__cust-chec + label {
     display: inline-flex;
     align-items: center;
     user-select: none;
 
     &::before {
-      content: '';
+      content: "";
       display: inline-block;
       width: 1em;
       height: 1em;
@@ -303,20 +303,19 @@
     }
   }
 
-  &__cust-chec:not(:disabled):not(:checked)+label:hover::before {
+  &__cust-chec:not(:disabled):not(:checked) + label:hover::before {
     border-color: $colorCard;
   }
-  &__cust-chec:not(:disabled):active+label::before {
+  &__cust-chec:not(:disabled):active + label::before {
     background-color: $colorCard;
     border-color: $colorCard;
-
   }
-  &__cust-chec:checked+label::before {
+  &__cust-chec:checked + label::before {
     border-color: $colorCard;
     background-color: #ffffff;
-    background-image: url('/icon/circle-green-icon-card.svg');
+    background-image: url("/icon/circle-green-icon-card.svg");
   }
-  &__cust-chec:disabled+label::before {
+  &__cust-chec:disabled + label::before {
     background-color: #ffffff;
   }
   &__btn-wrp {
@@ -351,4 +350,8 @@
 
 .activPopUpRev {
   display: none;
+}
+
+.activePupUpRev {
+  display: block;
 }

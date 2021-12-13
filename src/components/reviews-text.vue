@@ -7,7 +7,8 @@
         </div>
         <div class="card-prod-reviews__btn-wrp">
             <p class="card-prod-reviews__btn-text">Оставьте свой отзыв об этом товаре</p>
-            <button @click="$showId('rev-pop-up')"  class="card-prod-reviews__btn">Написать отзыв</button>
+                <!-- @click="$showId('rev-pop-up')" -->
+            <button  @click="popUp" class="card-prod-reviews__btn">Написать отзыв</button>
         </div>
         <div class="card-prod-reviews__box">
             <div>
@@ -150,6 +151,7 @@ export default ({
         popUp(){
             this.activePopUp = true;
             console.log(this.activePopUp);
+            this.$emit('btnClick', this.activePopUp)
         }
         // changeRating(activePopUp) {
         // this.$emit("update:modelValue", activePopUp); // previously was `this.$emit('input', title)`

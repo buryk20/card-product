@@ -57,8 +57,8 @@
       <sliderRev :carousel_data="sliderItems"></sliderRev>
     </div>
   </div>
-  <reviewsText></reviewsText>
-  <div  v-bind:class="{ activPopUpRev: activePopUp}" class="pop-up-reviews-card">
+  <reviewsText @btnClick="popUp"></reviewsText>
+  <div v-bind:class="{activePupUpRev: vfvfvt}" class="pop-up-reviews-card">
     <h4 class="pop-up-reviews-card__title">Написать отзыв</h4>
     <!-- <stars class="pop-up-reviews-card__star-wrp"></stars> -->
     <div>
@@ -180,7 +180,6 @@ export default {
     revPopUp
   },
   props: {
-    activePopUp: Boolean
   },
   data () {
     return {
@@ -202,9 +201,17 @@ export default {
             { id: 4, name: 'img2', img: '6626_4.png'},
             { id: 5, name: 'img2', img: '6626_5.png'},
             { id: 6, name: 'img2', img: '6626_4.png'}
-          ]
+          ],
+      vfvfvt: false
     }
-
+  },
+  methods: {
+    popUp(activePopUp) {
+      if (activePopUp == true) {
+        this.vfvfvt = true
+      }
+      console.log(this.vfvfvt);
+    }
   }
 }
 </script>
