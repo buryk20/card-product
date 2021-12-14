@@ -11,20 +11,20 @@ import description from './components/description.vue';
 import floatingCard from './components/floatingCard.vue';
 import ratingReview from './components/ratingReviews.vue';
 import starReview from './components/starReviews.vue';
-import reviewsText from './components/reviews-text.vue';
-import GlobalFunction from './tools/globalFunc'
+import ratingTotalreviews from './components/ratingTotalreviews.vue';
+// import GlobalFunction from './tools/globalFunc';
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 createApp(App).use(store).mount('#app');
-createApp(starRating).use(VueAxios, axios).use.apply(GlobalFunction).mount('#starRating');
+createApp(starRating).use(VueAxios, axios).mount('#starRating');
 createApp(delivery).use(delivery).mount('#delivery');
 createApp(slider).use(slider).mount('#slider');
 
-const reviewsT = document.querySelectorAll('.vue-reviews-text');
+const reviewsT = document.querySelectorAll('.vue-reviews-rating-total');
 for (const reviewT of reviewsT) {
-    createApp(reviewsText).use(store).mount(reviewT);
+    createApp(ratingTotalreviews).use(store).mount(reviewT);
 }
 
 const starReviews = document.querySelectorAll('.vue-reviews-stars');

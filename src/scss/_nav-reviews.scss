@@ -33,6 +33,7 @@
   width: 100%;
   margin-right: 16px;
   padding: 16px;
+
   @include startAdaptiveSmol {
     & {
       margin-bottom: 16px;
@@ -80,6 +81,7 @@
 
 .reviews-page-top-card {
   display: flex;
+
   @include startAdaptiveSmol {
     & {
       flex-direction: column;
@@ -91,7 +93,7 @@
   position: relative;
   z-index: 5;
 
-  &__wrp + &__wrp {
+  &__wrp+&__wrp {
     margin-top: 10px;
   }
 
@@ -147,7 +149,7 @@
     border-radius: 8px;
   }
 
-  &__img + &__img {
+  &__img+&__img {
     margin-left: 16px;
   }
 
@@ -162,14 +164,36 @@
 }
 
 .pop-up-reviews-card {
-  @include boxCardProd;
-  max-width: 499px;
-  width: 100%;
-  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0c082266;
+  backdrop-filter: blur(25px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s;
+  z-index: -1;
+  &__wrp-cont-pop {
+    @include boxCardProd;
+    max-width: 499px;
+    width: 100%;
+    background-color: #ffffff;
+  }
+
   &__title {
     margin-bottom: 16px;
     font-size: 16px;
     font-weight: 600;
+  }
+
+  &__wrp-title {
+    display: flex;
+    justify-content: space-between;
   }
 
   &__star-wrp {
@@ -281,7 +305,7 @@
     opacity: 0;
   }
 
-  &__cust-chec + label {
+  &__cust-chec+label {
     display: inline-flex;
     align-items: center;
     user-select: none;
@@ -303,46 +327,55 @@
     }
   }
 
-  &__cust-chec:not(:disabled):not(:checked) + label:hover::before {
+  &__cust-chec:not(:disabled):not(:checked)+label:hover::before {
     border-color: $colorCard;
   }
-  &__cust-chec:not(:disabled):active + label::before {
+
+  &__cust-chec:not(:disabled):active+label::before {
     background-color: $colorCard;
     border-color: $colorCard;
   }
-  &__cust-chec:checked + label::before {
+
+  &__cust-chec:checked+label::before {
     border-color: $colorCard;
     background-color: #ffffff;
     background-image: url("/icon/circle-green-icon-card.svg");
   }
-  &__cust-chec:disabled + label::before {
+
+  &__cust-chec:disabled+label::before {
     background-color: #ffffff;
   }
+
   &__btn-wrp {
     margin-bottom: 25px;
     padding-top: 6px;
     display: flex;
     justify-content: center;
   }
+
   &__btn-cancel {
     @include btnCancel;
     margin-right: 16px;
   }
+
   &__btn {
     @include btnCardBuy;
     max-width: none;
     width: auto;
     padding: 0 16px;
+
     &:hover {
       background-color: $colorHov;
     }
   }
+
   &__text-wrp {
     max-width: 467px;
     color: $colorCardGrey;
     font-size: 16px;
     text-align: center;
   }
+
   &__text-link {
     color: $colorCard;
   }
@@ -353,5 +386,11 @@
 }
 
 .activePupUpRev {
-  display: block;
+  transition: all 0.4s;
+  visibility: visible;
+  z-index: 1000;
+  opacity: 1;
+}
+.vue-rating-review {
+  margin-right: 16px;
 }

@@ -1,113 +1,66 @@
 <template>
-  <div class="reviews-page-top-card">
-    <div class="overall-rating-card-prod">
-      <p class="overall-rating-card-prod__title">Общий рейтинг</p>
-      <div class="overall-rating-card-prod__wrp">
-        <div>
-          <p class="overall-rating-card-prod__num">5,0</p>
-          <starReviews class="overall-rating-card-prod__star"></starReviews>
-          <p class="overall-rating-card-prod__text">{{ numberStarsFive }} отзывов</p>
-        </div>
-        <div class="rating-scale">
-          <div class="rating-scale__wrp">
-              <p class="rating-scale__num">5</p><img class="rating-scale__star-icon" src="/icon/star-card-product.svg" alt="stars">
-              <div class="rating-scale__pos-wrp">
-                <div v-bind:style="{ width: `${averageFive * 10}%` }" class="rating-scale__act"></div>
-                <div class="rating-scale__des"></div>
-              </div>
-                <p class="rating-scale__num-style">{{ numberStarsFive }}</p>
-          </div>
-          <div class="rating-scale__wrp">
-              <p class="rating-scale__num">4</p><img class="rating-scale__star-icon" src="/icon/star-card-product.svg" alt="stars">
-              <div class="rating-scale__pos-wrp">
-                <div v-bind:style="{ width: `${averageFour * 10}%` }" class="rating-scale__act"></div>
-                <div class="rating-scale__des"></div>
-              </div>
-                <p class="rating-scale__num-style">{{ numberStarsFour }}</p>
-          </div>
-          <div class="rating-scale__wrp">
-              <p class="rating-scale__num">3</p><img class="rating-scale__star-icon" src="/icon/star-card-product.svg" alt="stars">
-              <div class="rating-scale__pos-wrp">
-                <div v-bind:style="{ width: `${averageThree * 10}%` }" class="rating-scale__act"></div>
-                <div class="rating-scale__des"></div>
-              </div>
-                <p class="rating-scale__num-style">{{ numberStarsThree }}</p>
-          </div>
-          <div class="rating-scale__wrp">
-              <p class="rating-scale__num">2</p><img class="rating-scale__star-icon" src="/icon/star-card-product.svg" alt="stars">
-              <div class="rating-scale__pos-wrp">
-                <div v-bind:style="{ width: `${averageTwo * 10}%` }" class="rating-scale__act"></div>
-                <div class="rating-scale__des"></div>
-              </div>
-                <p class="rating-scale__num-style">{{ numberStarsTwo }}</p>
-          </div>
-          <div class="rating-scale__wrp">
-              <p class="rating-scale__num">1</p><img class="rating-scale__star-icon" src="/icon/star-card-product.svg" alt="stars">
-              <div class="rating-scale__pos-wrp">
-                <div v-bind:style="{ width: `${numberStarsOne * 10}%` }" class="rating-scale__act"></div>
-                <div class="rating-scale__des"></div>
-              </div>
-              <p class="rating-scale__num-style">{{ averageOne }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="reviews-slider-card-prod">
-      <h4 class="reviews-slider-card-prod__title">Фото и видео покупателей</h4>
-      <sliderRev :carousel_data="sliderItems"></sliderRev>
-    </div>
-  </div>
   <reviewsText @btnClick="popUp"></reviewsText>
-  <div v-bind:class="{activePupUpRev: vfvfvt}" class="pop-up-reviews-card">
-    <h4 class="pop-up-reviews-card__title">Написать отзыв</h4>
-    <!-- <stars class="pop-up-reviews-card__star-wrp"></stars> -->
-    <div>
-      <div class="rating__body">
-        <div
-          v-bind:style="{ width: `${userRaring * 20}%` }"
-          class="rating__active"
-        ></div>
-        <div class="rating__items">
-          <input
-            type="radio"
-            name="ration"
-            v-model="userRaring"
-            class="rating__item"
-            value="1"
-          />
-          <input
-            type="radio"
-            name="ration"
-            v-model="userRaring"
-            class="rating__item"
-            value="2"
-          />
-          <input
-            type="radio"
-            name="ration"
-            v-model="userRaring"
-            class="rating__item"
-            value="3"
-          />
-          <input
-            type="radio"
-            name="ration"
-            v-model="userRaring"
-            class="rating__item"
-            value="4"
-          />
-          <input
-            type="radio"
-            name="ration"
-            v-model="userRaring"
-            class="rating__item"
-            value="5"
-          />
+  <div v-bind:class="{activePupUpRev: popUpActive}" class="pop-up-reviews-card">
+    <div class="pop-up-reviews-card__wrp-cont-pop">
+      <div class="pop-up-reviews-card__wrp-title">
+        <h4 class="pop-up-reviews-card__title">Написать отзыв</h4>
+        <button @click="popUpCros">
+          <img src="/icon/card-prod-pop-up-icon-cros.svg" alt="Закрыть">
+        </button>
+      </div>
+      <!-- <stars class="pop-up-reviews-card__star-wrp"></stars> -->
+      <div class="rating-pop__body-wrp">
+        <div class="rating-pop__body">
+          <div
+            v-bind:style="{ width: `${userRaringPop * 20}%` }"
+            class="rating-pop__active"
+          ></div>
+          <div class="rating-pop__items">
+            <input
+              type="radio"
+              name="ration"
+              v-model="userRaringPop"
+              class="rating-pop__item"
+              @mouseover="hoverEvent"
+              value="1"
+            />
+            <input
+              type="radio"
+              name="ration"
+              v-model="userRaringPop"
+              class="rating-pop__item"
+              @mouseover="hoverEvent"
+              value="2"
+            />
+            <input
+              type="radio"
+              name="ration"
+              v-model="userRaringPop"
+              class="rating-pop__item"
+              @mouseover="hoverEvent"
+              value="3"
+            />
+            <input
+              type="radio"
+              name="ration"
+              v-model="userRaringPop"
+              class="rating-pop__item"
+              @mouseover="hoverEvent"
+              @blur="isHower"
+              value="4"
+            />
+            <input
+              type="radio"
+              name="ration"
+              v-model="userRaringPop"
+              class="rating-pop__item"
+              @mouseover="hoverEvent"
+              value="5"
+            />
+          </div>
         </div>
       </div>
-    </div>
-    <revPopUp id="rev-pop-up">
-      <template>
+      <!-- <revPopUp id="rev-pop-up"> -->
         <div>
           <form class="pop-up-reviews-card__wrp-bene" action="#">
             <label class="pop-up-reviews-card__lab" for="dignity">Достоинство</label>
@@ -158,26 +111,20 @@
             </p>
           </div>
         </div>
-      </template>
-    </revPopUp>
+    </div>
   </div>
 </template>
 
 <script>
 
-import starReviews from './starReviews.vue';
-import sliderRev from './slider-reviews.vue';
 import reviewsText from './reviews-text.vue';
-import revPopUp from './revPopUp.vue';
+// import revPopUp from './revPopUp.vue';
 // import stars from './stars.vue';
 
 export default {
-  name: 'ratingReview',
+  name: 'rating-popReview',
   components: {
-    starReviews,
-    sliderRev,
-    reviewsText,
-    revPopUp
+    reviewsText
   },
   props: {
   },
@@ -202,15 +149,26 @@ export default {
             { id: 5, name: 'img2', img: '6626_5.png'},
             { id: 6, name: 'img2', img: '6626_4.png'}
           ],
-      vfvfvt: false
+      popUpActive: false,
+      userRaringPop: ""
     }
   },
   methods: {
     popUp(activePopUp) {
       if (activePopUp == true) {
-        this.vfvfvt = true
+        this.popUpActive = true
       }
-      console.log(this.vfvfvt);
+    },
+    popUpCros() {
+      this.popUpActive = false;
+    },
+    hoverEvent(event) {
+
+      this.userRaringPop = event.target.value;
+
+    },
+    isHower() {
+      this.userRaringPop = "0";
     }
   }
 }
