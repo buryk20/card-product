@@ -45,8 +45,6 @@
               name="ration"
               v-model="userRaringPop"
               class="rating-pop__item"
-              @mouseover="hoverEvent"
-              @blur="isHower"
               value="4"
             />
             <input
@@ -161,14 +159,6 @@ export default {
     },
     popUpCros() {
       this.popUpActive = false;
-    },
-    hoverEvent(event) {
-
-      this.userRaringPop = event.target.value;
-
-    },
-    isHower() {
-      this.userRaringPop = "0";
     }
   }
 }

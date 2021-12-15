@@ -24,6 +24,12 @@
   &__pos {
     max-width: 1198px;
     width: 100%;
+    margin-right: 16px;
+    @include floatingCard {
+      & {
+        margin-right: 0;
+      }
+    }
   }
 }
 
@@ -33,6 +39,11 @@
   width: 100%;
   margin-right: 16px;
   padding: 16px;
+  @include snakeSolor {
+    & {
+      max-width: none;
+    }
+  }
 
   @include startAdaptiveSmol {
     & {
@@ -42,6 +53,11 @@
 
   &__wrp {
     display: flex;
+    @include snakeSolor {
+      & {
+        justify-content: space-between;
+      }
+    }
   }
 
   &__num {
@@ -68,7 +84,7 @@
 }
 
 .reviews-slider-card-prod {
-  max-width: 777px;
+  max-width: 793px;
   width: 100%;
   @include boxCardProd;
 
@@ -76,6 +92,21 @@
     margin-bottom: 24px;
     font-size: 18px;
     font-weight: 400;
+  }
+  &__wrp-slid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__btn-l,
+  &__btn-r {
+    width: 12px;
+    transform: rotate(90deg);
+  }
+
+  &__slid-pos {
+    padding-left: 4px;
+    margin-right: 4px;
   }
 }
 
@@ -134,11 +165,21 @@
 
   &__pos-wrp {
     margin-right: 10px;
+    @include snakeSolor {
+      & {
+        display: none;
+      }
+    }
   }
 
   &__num-style {
     color: $colorCard;
     text-decoration: underline;
+    @include snakeSolor {
+      & {
+        padding-left: 10px;
+      }
+    }
   }
 }
 
@@ -154,7 +195,7 @@
   }
 
   &__wrp {
-    max-width: 728px;
+    max-width: 732px;
     overflow: hidden;
   }
 
@@ -390,7 +431,4 @@
   visibility: visible;
   z-index: 1000;
   opacity: 1;
-}
-.vue-rating-review {
-  margin-right: 16px;
 }
