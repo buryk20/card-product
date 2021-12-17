@@ -84,7 +84,7 @@
 }
 
 .reviews-slider-card-prod {
-  max-width: 793px;
+  max-width: 777px;
   width: 100%;
   @include boxCardProd;
 
@@ -94,19 +94,11 @@
     font-weight: 400;
   }
   &__wrp-slid {
+    max-width: 756px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-  &__btn-l,
-  &__btn-r {
-    width: 12px;
-    transform: rotate(90deg);
-  }
-
-  &__slid-pos {
-    padding-left: 4px;
-    margin-right: 4px;
   }
 }
 
@@ -164,7 +156,7 @@
   }
 
   &__pos-wrp {
-    margin-right: 10px;
+    margin-right: 6px;
     @include snakeSolor {
       & {
         display: none;
@@ -191,16 +183,18 @@
   }
 
   &__img+&__img {
-    margin-left: 16px;
+    margin-left: 15px;
   }
 
   &__wrp {
-    max-width: 732px;
+    max-width: 726px;
     overflow: hidden;
   }
 
   &__img-wrp {
+    padding-left: 1px;
     display: flex;
+    transition: all 0.6s;
   }
 }
 

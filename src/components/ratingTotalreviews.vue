@@ -96,15 +96,7 @@
     </div>
     <div class="reviews-slider-card-prod">
       <h4 class="reviews-slider-card-prod__title">Фото и видео покупателей</h4>
-      <div class="reviews-slider-card-prod__wrp-slid">
-        <div class="reviews-slider-card-prod__btn-wrp">
-          <button class="reviews-slider-card-prod__btn-l"><img src="/icon/slider-icon-down-card.svg" alt="в лево" /></button>
-        </div>
-        <sliderRev class="reviews-slider-card-prod__slid-pos" :carousel_data="sliderItems"></sliderRev>
-        <div class="reviews-slider-card-prod__btn-wrp">
-          <button  class="reviews-slider-card-prod__btn-r"><img src="/icon/slider-icon-up-card.svg" alt="в право" /></button>
-        </div>
-      </div>
+        <sliderRev v-bind:left-btn="leftBtn" class="reviews-slider-card-prod__slid-pos" :carousel_data="sliderItems"></sliderRev>
     </div>
   </div>
 </template>
@@ -139,7 +131,8 @@ export default {
         { id: 5, name: "img2", img: "6626_5.png" },
         { id: 6, name: "img2", img: "6626_4.png" },
       ],
+      leftBtn: 0,
     };
-  },
+  }
 };
 </script>

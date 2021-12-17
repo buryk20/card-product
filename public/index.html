@@ -34,28 +34,28 @@
       </article>
       <article  class="card-prod-new-navig">
         <div class="card-prod-new-navig__line"></div>
-        <div id="navActivJsColor" class="card-prod-new-navig__wrp">
-          <div class="card-prod-new-navig__list navActivColor" >
-            <a href="#" class="allAboutProd">Всё о товаре</a>
+        <div id="navActivJsColor" class="card-prod-new-navig__wrp" data-tab-nav>
+          <div class="card-prod-new-navig__list navActivColor"  data-target-id="tab-about">
+            <a href="#" class="allAboutProd" >Всё о товаре</a>
           </div>
-          <div class="card-prod-new-navig__list">
-            <a href="#" class="specificNav">Характеристики</a>
+          <div class="card-prod-new-navig__list" data-target-id="tab-specificarins">
+            <a href="#" class="specificNav" >Характеристики</a>
           </div>
-          <div class="card-prod-new-navig__list">
-            <a href="#" class="navReviews">Отзывы</a>
+          <div class="card-prod-new-navig__list" data-target-id="tab-reviews">
+            <a href="#" class="navReviews" >Отзывы</a>
           </div>
           <!-- <div class="card-prod-new-navig__list">
             <a href="#" class="navQuestion">Вопросы</a>
           </div> -->
-          <div class="card-prod-new-navig__list">
-            <a href="#" class="navMultimedia">Мультимедиа</a>
+          <div class="card-prod-new-navig__list" data-target-id="tab-multimedia">
+            <a href="#" class="navMultimedia" >Мультимедиа</a>
           </div>
-          <div class="card-prod-new-navig__list">
-            <a class="navDownloads" href="#">Загрузки</a>
+          <div class="card-prod-new-navig__list" data-target-id="tab-downloads">
+            <a class="navDownloads" href="#" >Загрузки</a>
           </div>
         </div>
       </article>
-      <div class="card-prod-all-about-prod active-js-nav">
+      <div class="card-prod-all-about-prod active-js-nav" id="tab-about">
         <article class="card-prod-wrp-cont">
           <section class="card-prod-img">
             <div class="card-prod-img__wrp">
@@ -478,7 +478,7 @@
            </div>
         </div>
       </div>
-      <div class="card-prod-nav-specificarins">
+      <div class="card-prod-nav-specificarins" id="tab-specificarins">
         <div class="card-prod-nav-specificarins__pos-wrp">
           <div class="card-prod-nav-specificarins__wrp">
             <div class="card-prod-nav-specificarins__specif specificationsCard"></div>
@@ -489,7 +489,7 @@
           </div>
         </div>
       </div>
-      <div class="card-prod-nav-reviews">
+      <div class="card-prod-nav-reviews" id="tab-reviews">
         <div class="card-prod-nav-reviews__wrp-pos">
           <div class="card-prod-nav-reviews__pos">
             <div class="card-prod-nav-reviews__wrp">
@@ -503,7 +503,7 @@
           <div class="vue-floating-сard"></div>
         </div>
       </div>
-      <div class="card-prod-nav-multimedia">
+      <div class="card-prod-nav-multimedia" id="tab-multimedia">
         <div class="card-prod-nav-multimedia__wrp">
           <div class="card-prod-nav-multimedia__wrp-pos">
             <h2 class="card-prod-nav-multimedia__title">Видеообзоры GV-074-IP-H-COА14-20 3МР (Lite)</h2>
@@ -555,7 +555,7 @@
             <div class="vue-floating-сard"></div>
         </div>
       </div>
-      <div class="card-prod-nav-downloads">
+      <div class="card-prod-nav-downloads" id="tab-downloads">
         <div class="card-prod-nav-downloads__cont-wrp">
           <div class="card-prod-nav-downloads__wrp">
             <div class="card-prod-downloads__wrp">
