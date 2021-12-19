@@ -157,7 +157,7 @@
 
 <script>
 import reviewsText from "./reviews-text.vue";
-import { mapActions, mapGetters, mapMutations } from "vuex";
+// import { mapActions, mapGetters, mapMutations } from "vuex";
 // import revPopUp from './revPopUp.vue';
 // import stars from './stars.vue';
 
@@ -197,11 +197,11 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["rating"]),
+    // ...mapGetters(["rating"]),
   },
   methods: {
-    ...mapActions(["getData"]),
-    ...mapMutations(["setRating"]),
+    // ...mapActions(["getData"]),
+    // ...mapMutations(["setRating"]),
     popUp(activePopUp) {
       if (activePopUp == true) {
         this.popUpActive = true;
@@ -212,9 +212,6 @@ export default {
     },
   },
   mounted() {
-    this.getData().then(() => {
-      console.log(this.rating);
-    });
   },
 };
 </script>

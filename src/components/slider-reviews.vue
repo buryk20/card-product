@@ -46,19 +46,20 @@ export default {
     },
     methods: {
       btnLift() {
-        if(this.leftBtn >= this.carousel_data.length - 4) {
+        console.log(this.carousel_data.length);
+        if(this.leftBtn == this.carousel_data.length - 5) {
+          this.leftBtn++;
           this.isDisabled = true;
           this.dispAct = "none",
           this.dispNone = "flex"
-          console.log(this.leftBtn = this.carousel_data.length);
+          console.log(this.leftBtn);
         } else {
-          this.leftBtn = this.carousel_data;
-          console.log(this.leftBtn = this.carousel_data.length);
+        this.leftBtn++;
         }
       },
       rightsBtn() {
         this.leftBtn--;
-        if (this.leftBtn < this.carousel_data.length - 4) {
+        if (this.leftBtn <= this.carousel_data.length - 4) {
           this.isDisabled = false;
           this.dispAct = "flex",
           this.dispNone = "none"
