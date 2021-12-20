@@ -1,7 +1,7 @@
 <template>
   <div class="reviews-slider-card-prod__wrp-slid">
     <div class="reviews-slider-card-prod__btn-wrp">
-      <button :disabled="isDisabled" @click="btnLift" :style="{'color': color}" class="reviews-slider-card-prod__btn-l">
+      <button :disabled="isDisabled" @click="btnLift" class="reviews-slider-card-prod__btn">
         <img :style="{'display': dispAct}" src="/icon/slider-rev-card-lif-icon.svg" alt="в лево" />
         <img :style="{'display': dispNone}" src="/icon/slider-rev-card-lif-icon-des.svg" alt="в лево" />
       </button>
@@ -9,7 +9,7 @@
     <div class="slider-rev__wrp">
       <div
           class="slider-rev__img-wrp"
-          :style="{ 'margin-left': '-' + 185 * leftBtn + 'px' }"
+          :style="{ 'margin-left': '-' + marDef * leftBtn + 'px' }"
         >
         <img
           class="slider-rev__img"
@@ -21,7 +21,10 @@
       </div>
     </div>
     <div class="reviews-slider-card-prod__btn-wrp">
-      <button  @click="rightsBtn" class="reviews-slider-card-prod__btn-r"><img src="/icon/slider-rev-card-re-icon.svg" alt="в право" /></button>
+      <button :disabled="isDisabledR"  @click="rightsBtn" class="reviews-slider-card-prod__btn">
+        <img :style="{'display': dispNoneR}" src="/icon/slider-rev-card-re-icon.svg" alt="в право" />
+        <img :style="{'display': dispActR}" src="/icon/slider-rev-card-rai-icon-des.svg" alt="в лево" />
+      </button>
     </div>
   </div>
 </template>
@@ -33,9 +36,13 @@ export default {
       return {
         leftBtn: 0,
         isDisabled: false,
-        color: "#009b3e",
         dispAct: "flex",
-        dispNone: "none"
+        dispNone: "none",
+        dispActR: "flex",
+        dispNoneR: "none",
+        isDisabledR: true,
+        width: 0,
+        marDef: 185,
       }
     },
     props: {
@@ -46,15 +53,24 @@ export default {
     },
     methods: {
       btnLift() {
-        console.log(this.carousel_data.length);
         if(this.leftBtn == this.carousel_data.length - 5) {
           this.leftBtn++;
           this.isDisabled = true;
           this.dispAct = "none",
           this.dispNone = "flex"
-          console.log(this.leftBtn);
         } else {
-        this.leftBtn++;
+          this.width = window.innerWidth;
+          if(this.width < 1111 ) {
+              this.marDef = 128;
+              this.leftBtn++;
+              if (this.leftBtn > 0) {
+              this.isDisabledR = false;
+              this.dispNoneR = 'flex';
+              this.dispActR = 'none';
+            } else {
+              this.leftBtn++;
+            }
+          }
         }
       },
       rightsBtn() {
@@ -63,7 +79,15 @@ export default {
           this.isDisabled = false;
           this.dispAct = "flex",
           this.dispNone = "none"
+        } if (this.leftBtn == 0) {
+            this.isDisabledR = true;
+            this.dispNoneR = 'none';
+            this.dispActR = 'flex';
         }
+      },
+      svape() {
+        // alert('hello')
+        console.log('ce');
       }
     }
 };

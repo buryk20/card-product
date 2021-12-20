@@ -87,6 +87,16 @@
   max-width: 777px;
   width: 100%;
   @include boxCardProd;
+  @include sliderRevStarAd {
+    & {
+      max-width: 550px;
+    }
+  }
+  @include mobileHeight {
+    & {
+      max-width: 343px;
+    }
+  }
 
   &__title {
     margin-bottom: 24px;
@@ -99,6 +109,28 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include sliderRevStarAd {
+      & {
+        max-width: 523px;
+      }
+    }
+  }
+  &__btn {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 9px;
+      left: 9px;
+      width: 30px;
+      height: 30px;
+      @include sliderRevStarAd {
+        & {
+          top: -9px;
+          left: -9px;
+        }
+      }
+    }
   }
 }
 
@@ -141,7 +173,7 @@
     height: 10px;
     position: absolute;
     top: 7px;
-    left: 40px;
+    left: 39px;
     background-color: #fbbd09;
     border-radius: 34px;
     z-index: 50;
@@ -180,15 +212,40 @@
     max-width: 170px;
     border: $line-grey-col;
     border-radius: 8px;
+    @include sliderRevStarAd {
+      & {
+        max-width: 113px;
+      }
+    }
+    @include mobileHeight {
+      & {
+        max-width: 66px;
+      }
+    }
   }
 
   &__img+&__img {
     margin-left: 15px;
+    @include mobileHeight {
+      & {
+        margin-left: 4px;
+      }
+    }
   }
 
   &__wrp {
     max-width: 726px;
     overflow: hidden;
+    @include sliderRevStarAd {
+      & {
+        max-width: 498px;
+      }
+    }
+    @include mobileHeight {
+      & {
+        max-width: 279px;
+      }
+    }
   }
 
   &__img-wrp {
