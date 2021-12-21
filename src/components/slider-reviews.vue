@@ -52,6 +52,11 @@ export default {
         }
     },
     methods: {
+      des() {
+        this.isDisabledR = false;
+        this.dispNoneR = 'flex';
+        this.dispActR = 'none';
+      },
       btnLift() {
         if(this.leftBtn == this.carousel_data.length - 5) {
           this.leftBtn++;
@@ -60,16 +65,25 @@ export default {
           this.dispNone = "flex"
         } else {
           this.width = window.innerWidth;
-          if(this.width < 1111 ) {
+          console.log(this.width);
+          if(this.width > 1111) {
+            this.leftBtn++;
+            this.des();
+          }
+          if(this.width > 600 && this.width <= 1111) {
               this.marDef = 128;
               this.leftBtn++;
               if (this.leftBtn > 0) {
-              this.isDisabledR = false;
-              this.dispNoneR = 'flex';
-              this.dispActR = 'none';
+              this.des();
             } else {
               this.leftBtn++;
             }
+          } if (this.width > 0 && this.width <= 600) {
+              this.marDef = 69;
+              this.leftBtn++;
+              if (this.leftBtn > 0) {
+              this.des();
+            } 
           }
         }
       },

@@ -120,16 +120,10 @@
     &::before {
       content: "";
       position: absolute;
-      top: 9px;
-      left: 9px;
+      top: -9px;
+      left: -9px;
       width: 30px;
       height: 30px;
-      @include sliderRevStarAd {
-        & {
-          top: -9px;
-          left: -9px;
-        }
-      }
     }
   }
 }
@@ -148,7 +142,7 @@
   position: relative;
   z-index: 5;
 
-  &__wrp+&__wrp {
+  &__wrp + &__wrp {
     margin-top: 10px;
   }
 
@@ -224,7 +218,7 @@
     }
   }
 
-  &__img+&__img {
+  &__img + &__img {
     margin-left: 15px;
     @include mobileHeight {
       & {
@@ -397,7 +391,7 @@
     opacity: 0;
   }
 
-  &__cust-chec+label {
+  &__cust-chec + label {
     display: inline-flex;
     align-items: center;
     user-select: none;
@@ -419,22 +413,22 @@
     }
   }
 
-  &__cust-chec:not(:disabled):not(:checked)+label:hover::before {
+  &__cust-chec:not(:disabled):not(:checked) + label:hover::before {
     border-color: $colorCard;
   }
 
-  &__cust-chec:not(:disabled):active+label::before {
+  &__cust-chec:not(:disabled):active + label::before {
     background-color: $colorCard;
     border-color: $colorCard;
   }
 
-  &__cust-chec:checked+label::before {
+  &__cust-chec:checked + label::before {
     border-color: $colorCard;
     background-color: #ffffff;
     background-image: url("/icon/circle-green-icon-card.svg");
   }
 
-  &__cust-chec:disabled+label::before {
+  &__cust-chec:disabled + label::before {
     background-color: #ffffff;
   }
 
