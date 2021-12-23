@@ -264,6 +264,11 @@
   visibility: hidden;
   transition: all 0.4s;
   z-index: -1;
+  @include maxHeight {
+    & {
+      background-color: #fbbd09;
+    }
+  }
   &__wrp-cont-pop {
     @include boxCardProd;
     max-width: 499px;
@@ -306,6 +311,11 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    @include mobileHeight {
+      & {
+        flex-direction: column;
+      }
+    }
   }
 
   &__wrp-bene {
@@ -322,11 +332,22 @@
     &:hover {
       background-color: $colorHov;
     }
+
+    @include mobileHeight {
+      & {
+        max-width: none;
+      }
+    }
   }
 
   &__video {
     max-width: 280px;
     width: 100%;
+    @include mobileHeight {
+      & {
+        max-width: none;
+      }
+    }
   }
 
   &__photo {
@@ -353,7 +374,34 @@
     &:hover {
       background-color: $colorHov;
     }
+
+    @include mobileHeight {
+      & {
+        max-width: none;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
   }
+
+  &__photo-btn-des {
+    display: flex;
+    @include mobileHeight {
+      & {
+        display: none;
+      }
+    }
+  }
+
+  &__photo-btn-mob {
+    display: none;
+    @include mobileHeight {
+      & {
+        display: flex;
+      }
+    }
+  }
+
 
   &__img-wrp {
     width: 65px;
@@ -383,6 +431,11 @@
 
   &__photo-text {
     max-width: 254px;
+    @include mobileHeight {
+      & {
+        max-width: none;
+      }
+    }
   }
 
   &__cust-chec {
@@ -437,11 +490,21 @@
     padding-top: 6px;
     display: flex;
     justify-content: center;
+    @include mobileHeight {
+      & {
+        flex-direction: column-reverse;
+      }
+    }
   }
 
   &__btn-cancel {
     @include btnCancel;
     margin-right: 16px;
+    @include mobileHeight {
+      & {
+        margin-right: 0;
+      }
+    }
   }
 
   &__btn {
@@ -452,6 +515,12 @@
 
     &:hover {
       background-color: $colorHov;
+    }
+
+    @include mobileHeight {
+      & {
+        margin-bottom: 10px;
+      }
     }
   }
 

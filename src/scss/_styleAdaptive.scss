@@ -19,6 +19,14 @@ $littleMob: 397px;
 
 $heightBan: 500px;
 
+
+@mixin maxHeight {
+  @media (max-width: $mobileHeight) and (min-height: $mobileHeight) {
+    @content;
+  }
+}
+
+
 @mixin sliderRevStarAd {
   @media (max-width: $sliderRevStarAd) {
     @content;

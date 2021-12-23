@@ -19,14 +19,15 @@
             class="rating-pop__active"
           ></div>
           <div class="rating-pop__items">
-            <input
-              type="radio"
-              name="ration"
-              v-model="userRaringPop"
-              class="rating-pop__item"
-              @mouseover="hoverEvent"
-              value="1"
-            />
+              <input
+                type="radio"
+                name="ration"
+                v-model="userRaringPop"
+                class="rating-pop__item"
+                @mouseover="hoverEvent"
+                value="1"
+              />
+
             <input
               type="radio"
               name="ration"
@@ -96,7 +97,7 @@
               Перетащите файлы сюда или нажмите на кнопку. Добавляйте до 10
               изображений в форматах .jpg, .gif, .png, размером файла до 5 МБ
             </p>
-            <button class="pop-up-reviews-card__photo-btn">
+            <button class="pop-up-reviews-card__photo-btn pop-up-reviews-card__photo-btn-des">
               Выбрать файлы
             </button>
           </div>
@@ -115,6 +116,9 @@
             </div>
           </div>
         </div>
+        <button class="pop-up-reviews-card__photo-btn pop-up-reviews-card__photo-btn-mob">
+              Выбрать файлы
+        </button>
         <form action="#">
           <label class="pop-up-reviews-card__lab" for="dignity"
             >Ваше имя и фамилия</label

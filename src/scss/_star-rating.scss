@@ -57,7 +57,7 @@
     @include underlinedGreenText;
   }
   &__body {
-    margin-right: 16px;
+    // margin-right: 16px;
     position: relative;
     &::before {
       content: url("/icon/star-pop-up-card-isAct.svg");
@@ -74,9 +74,13 @@
     left: 0;
   }
   &__item {
-    flex: 0 0 15%;
+    width: 100%;
+    flex: 0 0 11%;
     height: 100%;
     opacity: 0;
+    &::before {
+      content: "Плохо";
+    }
   }
   &__active {
     position: absolute;
