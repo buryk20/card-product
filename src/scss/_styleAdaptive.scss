@@ -17,11 +17,12 @@ $blockImgStatic: 510px;
 $snakeSolor: 491px;
 $littleMob: 397px;
 
+$heightPopUp: 1020px;
 $heightBan: 500px;
 
 
 @mixin maxHeight {
-  @media (max-width: $mobileHeight) and (min-height: $mobileHeight) {
+  @media (max-height: $heightPopUp), (max-width: $mobileHeight) {
     @content;
   }
 }

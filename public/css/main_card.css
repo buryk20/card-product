@@ -722,9 +722,11 @@ label {
   z-index: -1;
 }
 
-@media (max-width: 600px) and (min-height: 600px) {
+@media (max-height: 1020px), (max-width: 600px) {
   .pop-up-reviews-card {
-    background-color: #fbbd09;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
@@ -736,6 +738,13 @@ label {
   max-width: 499px;
   width: 100%;
   background-color: #ffffff;
+}
+
+@media (max-height: 1020px), (max-width: 600px) {
+  .pop-up-reviews-card__wrp-cont-pop {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
 }
 
 .pop-up-reviews-card__title {
@@ -1116,6 +1125,12 @@ label {
   visibility: visible;
   z-index: 1000;
   opacity: 1;
+}
+
+@media (max-height: 1020px), (max-width: 600px) {
+  .activePupUpRev {
+    overflow: auto;
+  }
 }
 
 .card-product-new-wrp {
@@ -1964,6 +1979,7 @@ label {
 .card-prod-downloads__title {
   padding-top: 16px;
   padding-left: 16px;
+  margin-right: 16px;
 }
 
 .card-prod-downloads__heading {

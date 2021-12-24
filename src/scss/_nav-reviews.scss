@@ -25,6 +25,7 @@
     max-width: 1198px;
     width: 100%;
     margin-right: 16px;
+
     @include floatingCard {
       & {
         margin-right: 0;
@@ -39,6 +40,7 @@
   width: 100%;
   margin-right: 16px;
   padding: 16px;
+
   @include snakeSolor {
     & {
       max-width: none;
@@ -53,6 +55,7 @@
 
   &__wrp {
     display: flex;
+
     @include snakeSolor {
       & {
         justify-content: space-between;
@@ -87,11 +90,13 @@
   max-width: 777px;
   width: 100%;
   @include boxCardProd;
+
   @include sliderRevStarAd {
     & {
       max-width: 550px;
     }
   }
+
   @include mobileHeight {
     & {
       max-width: 343px;
@@ -103,20 +108,24 @@
     font-size: 18px;
     font-weight: 400;
   }
+
   &__wrp-slid {
     max-width: 756px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     @include sliderRevStarAd {
       & {
         max-width: 523px;
       }
     }
   }
+
   &__btn {
     position: relative;
+
     &::before {
       content: "";
       position: absolute;
@@ -142,7 +151,7 @@
   position: relative;
   z-index: 5;
 
-  &__wrp + &__wrp {
+  &__wrp+&__wrp {
     margin-top: 10px;
   }
 
@@ -183,6 +192,7 @@
 
   &__pos-wrp {
     margin-right: 6px;
+
     @include snakeSolor {
       & {
         display: none;
@@ -193,6 +203,7 @@
   &__num-style {
     color: $colorCard;
     text-decoration: underline;
+
     @include snakeSolor {
       & {
         padding-left: 10px;
@@ -206,11 +217,13 @@
     max-width: 170px;
     border: $line-grey-col;
     border-radius: 8px;
+
     @include sliderRevStarAd {
       & {
         max-width: 113px;
       }
     }
+
     @include mobileHeight {
       & {
         max-width: 66px;
@@ -218,8 +231,9 @@
     }
   }
 
-  &__img + &__img {
+  &__img+&__img {
     margin-left: 15px;
+
     @include mobileHeight {
       & {
         margin-left: 4px;
@@ -230,11 +244,13 @@
   &__wrp {
     max-width: 726px;
     overflow: hidden;
+
     @include sliderRevStarAd {
       & {
         max-width: 498px;
       }
     }
+
     @include mobileHeight {
       & {
         max-width: 279px;
@@ -264,16 +280,24 @@
   visibility: hidden;
   transition: all 0.4s;
   z-index: -1;
+
   @include maxHeight {
     & {
-      background-color: #fbbd09;
+      align-items: flex-start;
     }
   }
+
   &__wrp-cont-pop {
     @include boxCardProd;
     max-width: 499px;
     width: 100%;
     background-color: #ffffff;
+    @include maxHeight {
+      & {
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+    }
   }
 
   &__title {
@@ -311,6 +335,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+
     @include mobileHeight {
       & {
         flex-direction: column;
@@ -343,6 +368,7 @@
   &__video {
     max-width: 280px;
     width: 100%;
+
     @include mobileHeight {
       & {
         max-width: none;
@@ -386,6 +412,7 @@
 
   &__photo-btn-des {
     display: flex;
+
     @include mobileHeight {
       & {
         display: none;
@@ -395,6 +422,7 @@
 
   &__photo-btn-mob {
     display: none;
+
     @include mobileHeight {
       & {
         display: flex;
@@ -431,6 +459,7 @@
 
   &__photo-text {
     max-width: 254px;
+
     @include mobileHeight {
       & {
         max-width: none;
@@ -444,7 +473,7 @@
     opacity: 0;
   }
 
-  &__cust-chec + label {
+  &__cust-chec+label {
     display: inline-flex;
     align-items: center;
     user-select: none;
@@ -466,22 +495,22 @@
     }
   }
 
-  &__cust-chec:not(:disabled):not(:checked) + label:hover::before {
+  &__cust-chec:not(:disabled):not(:checked)+label:hover::before {
     border-color: $colorCard;
   }
 
-  &__cust-chec:not(:disabled):active + label::before {
+  &__cust-chec:not(:disabled):active+label::before {
     background-color: $colorCard;
     border-color: $colorCard;
   }
 
-  &__cust-chec:checked + label::before {
+  &__cust-chec:checked+label::before {
     border-color: $colorCard;
     background-color: #ffffff;
     background-image: url("/icon/circle-green-icon-card.svg");
   }
 
-  &__cust-chec:disabled + label::before {
+  &__cust-chec:disabled+label::before {
     background-color: #ffffff;
   }
 
@@ -490,6 +519,7 @@
     padding-top: 6px;
     display: flex;
     justify-content: center;
+
     @include mobileHeight {
       & {
         flex-direction: column-reverse;
@@ -500,6 +530,7 @@
   &__btn-cancel {
     @include btnCancel;
     margin-right: 16px;
+
     @include mobileHeight {
       & {
         margin-right: 0;
@@ -545,4 +576,10 @@
   visibility: visible;
   z-index: 1000;
   opacity: 1;
+
+  @include maxHeight {
+    & {
+      overflow: auto;
+    }
+  }
 }
