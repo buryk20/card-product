@@ -77,7 +77,17 @@
           }
         }
       }
-      &__icon-wrp {
+      &__btn-wrp {
+        width: 100%;
+      }
+      &__btn {
+        @include btnCardTransparent;
+        @include mobileHeight {
+          & {
+            max-width: 510px;
+            width: 100%;
+          }
+    }
       }
       &__price {
         margin-bottom: 16px;

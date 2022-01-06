@@ -9,7 +9,7 @@ export default ({
 })
 </script>
 
-<style lang="scss" src="./scss/main_card.scss" scoped>
+<style lang="scss" src="../../scss/main_card.scss" scoped>
 
 
 </style>

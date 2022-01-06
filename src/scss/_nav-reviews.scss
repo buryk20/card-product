@@ -298,6 +298,14 @@
         margin-bottom: 16px;
       }
     }
+    @include mobileHeight {
+      & {
+        max-width: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        border-radius: 0;
+      }
+    }
   }
 
   &__title {
@@ -318,11 +326,23 @@
   &__inp-style {
     margin-bottom: 10px;
     @include borderFormCard;
+    @include mobileHeight {
+      & {
+        max-width: none;
+
+      }
+    }
   }
 
   &__inp-comments {
     @include borderFormCard;
     min-height: 91px;
+    @include mobileHeight {
+      & {
+        max-width: none;
+
+      }
+    }
   }
 
   &__lab {

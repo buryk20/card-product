@@ -2,8 +2,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import store from './store';
 import starRating from './components/starRating.vue';
-import btnTrans from './components/btn-semi-transparent.vue';
-import buttonBuy from './btnBuy.vue';
+import buttonBuy from './components/UI/btnBuy.vue';
 import delivery from './delivery.vue';
 import slider from './slider.vue';
 import specifications from './components/specifications.vue';
@@ -57,7 +56,3 @@ for (const specificationsCard of specificationsCards) {
     createApp(specifications).use(store).mount(specificationsCard);
 }
 
-const vueBtns = document.querySelectorAll('.vue-buttomSemiTransparent');
-for (const vueBtn of vueBtns) {
-    createApp(btnTrans).use(store).mount(vueBtn);
-}

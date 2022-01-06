@@ -1,4 +1,4 @@
-@import "_main_variable_gv.scss";
+
 .rating {
   display: flex;
   align-items: center;
@@ -59,8 +59,26 @@
   &__body {
     // margin-right: 16px;
     position: relative;
+    @include mobileHeight {
+      & {
+        display: none;
+      }
+    }
     &::before {
       content: url("/icon/star-pop-up-card-isAct.svg");
+      display: block;
+    }
+  }
+  &__body-mob {
+    display: none;
+    position: relative;
+    @include mobileHeight {
+      & {
+        display: block;
+      }
+    }
+    &::before {
+      content: url("/icon/star-pop-up-card-isAct-mob.svg");
       display: block;
     }
   }
@@ -96,6 +114,28 @@
       height: 100%;
       top: 0;
       left: 0;
+    }
+  }
+  &__active-mob {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: none;
+    &::before {
+      content: url("/icon/star-pup-up-card-act-mob.svg");
+      position: absolute;
+      width: 80%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    @include mobileHeight {
+      & {
+        display: block;
+      }
     }
   }
   &__body-wrp {

@@ -195,6 +195,11 @@
         margin-right: 16px;
       }
     }
+    @include floatingCard {
+      & {
+        margin-right: 0;
+      }
+    }
   }
   &__title {
     padding-left: 16px;
@@ -220,7 +225,6 @@
     margin-bottom: 12px;
   }
   &__safety-vid-wrp {
-    padding-top: 16px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;

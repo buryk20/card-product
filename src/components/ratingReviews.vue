@@ -61,6 +61,54 @@
             />
           </div>
         </div>
+        <div class="rating-pop__body-mob">
+          <div
+            v-bind:style="{ width: `${userRaringPop * 20}%` }"
+            class="rating-pop__active-mob"
+          ></div>
+          <div class="rating-pop__items">
+              <input
+                type="radio"
+                name="ration"
+                v-model="userRaringPop"
+                class="rating-pop__item"
+                @mouseover="hoverEvent"
+                value="1"
+              />
+
+            <input
+              type="radio"
+              name="ration"
+              v-model="userRaringPop"
+              class="rating-pop__item"
+              @mouseover="hoverEvent"
+              value="2"
+            />
+            <input
+              type="radio"
+              name="ration"
+              v-model="userRaringPop"
+              class="rating-pop__item"
+              @mouseover="hoverEvent"
+              value="3"
+            />
+            <input
+              type="radio"
+              name="ration"
+              v-model="userRaringPop"
+              class="rating-pop__item"
+              value="4"
+            />
+            <input
+              type="radio"
+              name="ration"
+              v-model="userRaringPop"
+              class="rating-pop__item"
+              @mouseover="hoverEvent"
+              value="5"
+            />
+          </div>
+        </div>
       </div>
       <!-- <revPopUp id="rev-pop-up"> -->
       <div>

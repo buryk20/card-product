@@ -73,4 +73,4 @@ export default {
 };
 </script>
 
-<style lang="scss" src="../scss/_star-rating.scss" scoped></style>
+<style lang="scss" src="../scss/main_card.scss" scoped></style>
