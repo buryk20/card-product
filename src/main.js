@@ -11,7 +11,7 @@ import floatingCard from './components/floatingCard.vue';
 import ratingReview from './components/ratingReviews.vue';
 import starReview from './components/starReviews.vue';
 import ratingTotalreviews from './components/ratingTotalreviews.vue';
-// import GlobalFunction from './tools/globalFunc';
+import appendix from './components/appendix.vue';
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
@@ -20,11 +20,18 @@ createApp(App).use(store).mount('#app');
 createApp(starRating).use(VueAxios, axios).mount('#starRating');
 createApp(delivery).use(delivery).mount('#delivery');
 createApp(slider).use(slider).mount('#slider');
+createApp(appendix).use(appendix).mount('#appendix');
+
+const appendixsV = document.querySelectorAll('.vue-appendix');
+for (const appendixV of appendixsV) {
+    createApp(appendix).use(store).mount(appendixV);
+}
 
 const reviewsT = document.querySelectorAll('.vue-reviews-rating-total');
 for (const reviewT of reviewsT) {
     createApp(ratingTotalreviews).use(store).mount(reviewT);
 }
+
 
 const starReviews = document.querySelectorAll('.vue-reviews-stars');
 for (const starR of starReviews) {

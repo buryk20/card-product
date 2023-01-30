@@ -1,0 +1,39 @@
+<template>
+<div class="appendix__wrp">
+    <h3 class="appendix__title-text">
+        Официальное приложение GreenVision GVSS
+    </h3>
+    <div>
+        <div class="appendix__btns-wrp">
+            <button class="appendix__btn-wrp">
+                <a class="appendix__btn-link" href="#">
+                    <img src="/icon/Google-Play-logo.svg" alt="">
+                    <div>
+                        <p class="appendix__btn-text">Завантажуйте у</p>
+                        <p class="appendix__btn-text-serve">Google Play</p>
+                    </div>
+                </a>
+            </button>
+            <button class="appendix__btn-wrp">
+                <a class="appendix__btn-link" href="#">
+                    <img src="/icon/Apple-logo.svg" alt="">
+                    <div>
+                        <p class="appendix__btn-text">Завантажуйте у</p>
+                        <p class="appendix__btn-text-serve">App Store</p>
+                    </div>
+                </a>
+            </button>
+        </div>
+    </div>
+</div>
+</template>
+
+<script>
+export default {
+  name: "appendix"
+};
+</script>
+
+<style lang="scss" src="../scss/main_card.scss" scoped>
+
+</style>
