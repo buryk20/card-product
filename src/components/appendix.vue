@@ -1,5 +1,5 @@
 <template>
-<div class="appendix__wrp">
+<div class="appendix__wrp" style="background-image: url('/img/app-img-card.png')">
     <h3 class="appendix__title-text">
         Официальное приложение GreenVision GVSS
     </h3>

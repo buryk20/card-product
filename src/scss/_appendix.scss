@@ -1,6 +1,14 @@
 .appendix {
     &__wrp {
         @include boxCardProd;
+
+        background-repeat: no-repeat;
+        background-position-x: right;
+        background-position-y: bottom;
+
+        @include mobileWidth {
+            background-size: 0;
+        }
     }
 
     &__title-text {
@@ -18,6 +26,11 @@
 
         border: 2px solid $colorCard;
         border-radius: 8px;
+        background-color: #ffffff;
+
+        @include mobileWidth {
+            max-width: initial;
+        }
     }
 
     &__btn-text {
@@ -42,6 +55,10 @@
 
         display: flex;
         justify-content: space-between;
+
+        @include mobileWidth {
+            max-width: initial;
+        }
     }
 }
 
